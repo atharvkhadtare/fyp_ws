@@ -16,7 +16,7 @@
     <visual>
       <origin rpy="0 0 0 " xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -36,14 +36,14 @@
     <visual>
       <origin rpy="0 3.14 0 " xyz="0 0 0.025"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
       <origin rpy="0 3.14 0 " xyz="0 0 0.025"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -56,7 +56,7 @@
     <visual>
       <origin rpy="1.57 -3.14 1.57" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -96,14 +96,14 @@
     <visual>
       <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
       <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -116,7 +116,7 @@
     <visual>
       <origin rpy="1.57 3.14 -1.57" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -156,14 +156,14 @@
     <visual>
       <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
       <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -176,7 +176,7 @@
     <visual>
       <origin rpy="-1.57 0 -1.57" xyz="0. 0 0"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -196,7 +196,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0.015 0.0585"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -216,14 +216,14 @@
     <visual>
       <origin rpy="3.14 0 -1.57" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
       <origin rpy="3.14 0 1.57" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
