@@ -27,7 +27,7 @@
   <visual>
     <origin xyz="${trans}" rpy="${rpy}"/>
     <geometry>
-      <mesh filename="package://avitra_description/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mobile_manipulator/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="white"/>         
   </visual>
@@ -54,7 +54,7 @@
   <visual>
     <origin xyz="${trans}" rpy="${rpy}"/>
     <geometry>
-      <mesh filename="package://avitra_description/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://mobile_manipulator/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="white"/>         
   </visual>
@@ -81,7 +81,7 @@
   <visual>
     <origin xyz="${trans}" rpy="${rpy}"/>
     <geometry>
-      <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001" />
+      <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001" />
     </geometry>
     <material name="white"/>         
   </visual>
@@ -91,7 +91,7 @@
     <collision>
       <origin xyz="${trans}" rpy="${rpy}"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>    
     </collision> 
 </xacro:macro>  
@@ -108,7 +108,7 @@
   <visual>
     <origin xyz="${trans}" rpy="${rpy}"/>
     <geometry>
-      <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001" />
+      <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001" />
     </geometry>
     <material name="white"/>         
   </visual>
@@ -118,7 +118,7 @@
     <collision>
       <origin xyz="${trans}" rpy="${rpy}"/>
       <geometry>
-        <mesh filename="package://avitra_description/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>    
     </collision> 
 </xacro:macro>  
