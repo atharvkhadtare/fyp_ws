@@ -227,14 +227,14 @@
       </geometry>
     </collision>
   </link>
-  <joint name="1" type="revolute">
+  <joint name="one" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="base_link"/>
     <child link="link1Bracket"/>
     <axis xyz="0 0 1"/>
     <limit effort="30" lower="-1.57" upper="1.57" velocity="1.0"/>
   </joint>
-  <joint name="2" type="revolute">
+  <joint name="two" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.0636"/>
     <parent link="link1Bracket"/>
     <child link="shoulder1"/>
@@ -249,7 +249,7 @@
     <parent link="link2"/>
     <child link="link2Bracket"/>
   </joint>
-  <joint name="3" type="revolute">
+  <joint name="three" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.2567"/>
     <parent link="link2Bracket"/>
     <child link="elbow"/>
@@ -264,7 +264,7 @@
     <parent link="link3"/>
     <child link="link3Bracket"/>
   </joint>
-  <joint name="4" type="revolute">
+  <joint name="four" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.2567"/>
     <parent link="link3Bracket"/>
     <child link="WristPitch"/>
@@ -275,7 +275,7 @@
     <parent link="WristPitch"/>
     <child link="WristRoll"/>
   </joint>
-  <joint name="5" type="revolute">
+  <joint name="five" type="revolute">
     <origin rpy="0 0 0" xyz="0 0.015 0.0785"/>
     <parent link="WristRoll"/>
     <child link="end_effector"/>

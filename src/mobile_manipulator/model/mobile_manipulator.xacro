@@ -239,15 +239,15 @@
   
   
  
-  <xacro:Revjoint id="1" trans="0 0 0" rpy="0 0 0" parent="base_link" child="link1Bracket" axis="0 0 1" l="-1.57" u="1.57" v="1.0"/>
-  <xacro:Revjoint id="2" trans="0 0 0.0636" rpy="0 0 0" parent="link1Bracket" child="shoulder1" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
+  <xacro:Revjoint id="one" trans="0 0 0" rpy="0 0 0" parent="base_link" child="link1Bracket" axis="0 0 1" l="-1.57" u="1.57" v="1.0"/>
+  <xacro:Revjoint id="two" trans="0 0 0.0636" rpy="0 0 0" parent="link1Bracket" child="shoulder1" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
   <xacro:FxdJoint id="s1_l2" parent="shoulder1" child="link2"/>
   <xacro:FxdJoint id="l2_l2B" parent="link2" child="link2Bracket"/>
-  <xacro:Revjoint id="3" trans="0 0 ${0.0867+(length)}" rpy="0 0 0" parent="link2Bracket" child="elbow" axis="1 0 0" l="-1.57" u="3.14" v="1.0"/>
+  <xacro:Revjoint id="three" trans="0 0 ${0.0867+(length)}" rpy="0 0 0" parent="link2Bracket" child="elbow" axis="1 0 0" l="-1.57" u="3.14" v="1.0"/>
   <xacro:FxdJoint id="e_l3" parent="elbow" child="link3"/>
   <xacro:FxdJoint id="l3_l3B" parent="link3" child="link3Bracket"/>
-  <xacro:Revjoint id="4" trans="0 0 ${0.0867+length}" rpy="0 0 0" parent="link3Bracket" child="WristPitch" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
+  <xacro:Revjoint id="four" trans="0 0 ${0.0867+length}" rpy="0 0 0" parent="link3Bracket" child="WristPitch" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
   <xacro:FxdJoint id="WP_WR" parent="WristPitch" child="WristRoll"/>
-  <xacro:Revjoint id="5" trans="0 0.015 0.0785" rpy="0 0 0" parent="WristRoll" child="end_effector" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
+  <xacro:Revjoint id="five" trans="0 0.015 0.0785" rpy="0 0 0" parent="WristRoll" child="end_effector" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
 
 </robot>
