@@ -1,2 +1,0 @@
-avitra_description:mobile_manipulator
--DCATKIN_DEVEL_PREFIX=/home/rshah/ROS/fyp_ws/devel -DCMAKE_INSTALL_PREFIX=/home/rshah/ROS/fyp_ws/install -G Unix Makefiles

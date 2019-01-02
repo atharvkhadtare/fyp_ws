@@ -1,8 +1,0 @@
-prefix=/home/rshah/ROS/fyp_ws/install
-
-Name: avitra_description
-Description: Description of avitra_description
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/rshah/ROS/fyp_ws/install/lib 
-Requires: 
