@@ -13,7 +13,7 @@
 <xacro:property name="AXWidth" value="0.032"/>
 <xacro:property name="AXDepth" value="0.04"/>
 
-<xacro:property name="length" value="0.17"/>
+<xacro:property name="length" value="0.096"/>
 
 <xacro:macro name="MXInertial" params="trans rpy">
   <inertial>
@@ -108,7 +108,7 @@
   <visual>
     <origin xyz="${trans}" rpy="${rpy}"/>
     <geometry>
-      <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001" />
+      <mesh filename="package://mobile_manipulator/meshes/F4.stl" scale="0.001 0.001 0.001" />
     </geometry>
     <material name="white"/>         
   </visual>
@@ -118,7 +118,7 @@
     <collision>
       <origin xyz="${trans}" rpy="${rpy}"/>
       <geometry>
-        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>    
     </collision> 
 </xacro:macro>  
@@ -213,9 +213,9 @@
   </link> 
   
   <link name="link3Bracket">
-    <xacro:BracketInertial trans="0 0 ${0.0481+length}" rpy="0 3.14 0"/>
-    <xacro:BracketVisual trans="0 0 ${0.0481+length}" rpy="0 3.14 0"/>
-    <xacro:BracketCollision trans="0 0 ${0.0481+length}" rpy="0 3.14 0"/>
+    <xacro:AxBracketInertial trans="0 0 ${0.0988+length}" rpy="1.57 0 1.57"/>
+    <xacro:AxBracketVisual trans="0 0 ${0.0988+length}" rpy="1.57 0 1.57"/>
+    <xacro:AxBracketCollision trans="0 0 ${0.0988+length}" rpy="1.57 0 1.57"/>
   </link>
 
   <link name="WristPitch">
@@ -243,10 +243,10 @@
   <xacro:Revjoint id="two" trans="0 0 0.0636" rpy="0 0 0" parent="link1Bracket" child="shoulder1" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
   <xacro:FxdJoint id="s1_l2" parent="shoulder1" child="link2"/>
   <xacro:FxdJoint id="l2_l2B" parent="link2" child="link2Bracket"/>
-  <xacro:Revjoint id="three" trans="0 0 ${0.0867+(length)}" rpy="0 0 0" parent="link2Bracket" child="elbow" axis="1 0 0" l="-1.57" u="3.14" v="1.0"/>
+  <xacro:Revjoint id="three" trans="0 0 ${0.0867+(length)}" rpy="0 0 0" parent="link2Bracket" child="elbow" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
   <xacro:FxdJoint id="e_l3" parent="elbow" child="link3"/>
   <xacro:FxdJoint id="l3_l3B" parent="link3" child="link3Bracket"/>
-  <xacro:Revjoint id="four" trans="0 0 ${0.0867+length}" rpy="0 0 0" parent="link3Bracket" child="WristPitch" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
+  <xacro:Revjoint id="four" trans="0 0 ${0.0988+length}" rpy="0 0 0" parent="link3Bracket" child="WristPitch" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
   <xacro:FxdJoint id="WP_WR" parent="WristPitch" child="WristRoll"/>
   <xacro:Revjoint id="five" trans="0 0.015 0.0785" rpy="0 0 0" parent="WristRoll" child="end_effector" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
 
