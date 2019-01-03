@@ -69,39 +69,39 @@
   </link>
   <link name="link2">
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.1331"/>
-      <mass value="0.00085"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0961"/>
+      <mass value="0.00048"/>
       <inertia ixx="0.000050799110" ixy="0.0" ixz="0.0" iyy="0.00002857215" iyz="0.00000051457" izz="0.000043394"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.1331"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0961"/>
       <geometry>
-        <box size="0.04 0.04 0.17"/>
+        <box size="0.04 0.04 0.096"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.1331"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0961"/>
       <geometry>
-        <box size="0.04 0.04 0.17"/>
+        <box size="0.04 0.04 0.096"/>
       </geometry>
     </collision>
   </link>
   <link name="link2Bracket">
     <inertial>
-      <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
+      <origin rpy="0 3.14 0" xyz="0 0 0.1441"/>
       <mass value="0.00712"/>
       <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
     </inertial>
     <visual>
-      <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
+      <origin rpy="0 3.14 0" xyz="0 0 0.1441"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
+      <origin rpy="0 3.14 0" xyz="0 0 0.1441"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -129,41 +129,41 @@
   </link>
   <link name="link3">
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.1331"/>
-      <mass value="0.00085"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0961"/>
+      <mass value="0.00048"/>
       <inertia ixx="0.000050799110" ixy="0.0" ixz="0.0" iyy="0.00002857215" iyz="0.00000051457" izz="0.000043394"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.1331"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0961"/>
       <geometry>
-        <box size="0.04 0.04 0.17"/>
+        <box size="0.04 0.04 0.096"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.1331"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0961"/>
       <geometry>
-        <box size="0.04 0.04 0.17"/>
+        <box size="0.04 0.04 0.096"/>
       </geometry>
     </collision>
   </link>
   <link name="link3Bracket">
     <inertial>
-      <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
+      <origin rpy="1.57 0 1.57" xyz="0 0 0.1948"/>
       <mass value="0.00712"/>
       <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
     </inertial>
     <visual>
-      <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
+      <origin rpy="1.57 0 1.57" xyz="0 0 0.1948"/>
       <geometry>
-        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 3.14 0" xyz="0 0 0.2181"/>
+      <origin rpy="1.57 0 1.57" xyz="0 0 0.1948"/>
       <geometry>
-        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/F4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -250,11 +250,11 @@
     <child link="link2Bracket"/>
   </joint>
   <joint name="three" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0.2567"/>
+    <origin rpy="0 0 0" xyz="0 0 0.1827"/>
     <parent link="link2Bracket"/>
     <child link="elbow"/>
     <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-1.57" upper="3.14" velocity="1.0"/>
+    <limit effort="30" lower="-1.57" upper="1.57" velocity="1.0"/>
   </joint>
   <joint name="e_l3" type="fixed">
     <parent link="elbow"/>
@@ -265,7 +265,7 @@
     <child link="link3Bracket"/>
   </joint>
   <joint name="four" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0.2567"/>
+    <origin rpy="0 0 0" xyz="0 0 0.1948"/>
     <parent link="link3Bracket"/>
     <child link="WristPitch"/>
     <axis xyz="1 0 0"/>
