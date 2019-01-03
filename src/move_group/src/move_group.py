@@ -39,21 +39,63 @@ print "============ Robot Groups:", robot.get_group_names()
 
 # Sometimes for debugging it is useful to print the entire state of the
 # robot:
-print "============ Printing robot state"
-print robot.get_current_state()
+print "============ Printing group_arm pose"
+print group.get_current_pose()
 print ""
+# print "============ Printing robot state"
+# print robot.get_current_state()
+# print "====join_ngoal"
 
 # We can get the joint values from the group and adjust some of the values:
 joint_goal = group.get_current_joint_values()
 joint_goal[0] = 0
-joint_goal[1] = -pi/4
+joint_goal[1] = 0.0785
 joint_goal[2] = 0
 # joint_goal[3] = 0
 # joint_goal[4] = 0
 
 # The go command can be called with joint values, poses, or without any
 # parameters if you have already set the pose or joint target for the group
-group.go(joint_goal, wait=True)
+group.go(joint_goal, wait=False)
 
 # Calling ``stop()`` ensures that there is no residual movement
 group.stop()
+
+
+print "============ Printing group_arm pose"
+print group.get_current_pose()
+print ""
+# print "============ Printing robot state"
+# print robot.get_current_state()
+# print ""
+
+group_hand = moveit_commander.MoveGroupCommander("hand")
+print "============ Printing hand pose"
+print group_hand.get_current_pose()
+print ""
+
+pose_goal = geometry_msgs.msg.Pose()
+pose_goal.orientation.w = 1.0
+pose_goal.position.x = 0
+pose_goal.position.y = 0.129
+pose_goal.position.z = 0.192
+group.set_pose_target(pose_goal)
+# pose_goal = group.get_random_pose()
+plan = group.go(wait=True)
+# # Calling `stop()` ensures that there is no residual movement
+group.stop()
+
+print "============ Printing group_arm pose"
+print group.get_current_pose()
+print ""
+print "============ Printing robot state"
+print robot.get_current_state()
+print ""
+
+group_hand = moveit_commander.MoveGroupCommander("hand")
+print "============ Printing hand pose"
+print group_hand.get_current_pose()
+print ""
+# # It is always good to clear your targets after planning with poses.
+# # Note: there is no equivalent function for clear_joint_value_targets()
+group.clear_pose_targets()
