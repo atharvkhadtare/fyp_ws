@@ -232,7 +232,7 @@
     <parent link="base_link"/>
     <child link="link1Bracket"/>
     <axis xyz="0 0 1"/>
-    <limit effort="30" lower="-1.57" upper="1.57" velocity="1.0"/>
+    <limit effort="30" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
   <joint name="two" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.0636"/>

@@ -239,7 +239,7 @@
   
   
  
-  <xacro:Revjoint id="one" trans="0 0 0" rpy="0 0 0" parent="base_link" child="link1Bracket" axis="0 0 1" l="-1.57" u="1.57" v="1.0"/>
+  <xacro:Revjoint id="one" trans="0 0 0" rpy="0 0 0" parent="base_link" child="link1Bracket" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
   <xacro:Revjoint id="two" trans="0 0 0.0636" rpy="0 0 0" parent="link1Bracket" child="shoulder1" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
   <xacro:FxdJoint id="s1_l2" parent="shoulder1" child="link2"/>
   <xacro:FxdJoint id="l2_l2B" parent="link2" child="link2Bracket"/>
