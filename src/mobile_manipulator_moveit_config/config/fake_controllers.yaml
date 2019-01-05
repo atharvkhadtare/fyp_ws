@@ -5,6 +5,4 @@ controller_list:
       - two
       - three
       - four
-  - name: fake_hand_controller
-    joints:
       - five

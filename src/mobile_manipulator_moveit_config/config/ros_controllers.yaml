@@ -29,6 +29,8 @@ mobile_manipulator:
       - one
       - two
       - three
+      - four
+      - five
     gains:
       one:
         p: 100
@@ -41,6 +43,16 @@ mobile_manipulator:
         i: 1
         i_clamp: 1
       three:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      four:
+        p: 100
+        d: 1
+        i: 1
+        i_clamp: 1
+      five:
         p: 100
         d: 1
         i: 1
