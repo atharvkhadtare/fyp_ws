@@ -1,0 +1,11 @@
+controller_list:
+ - name: f_arm_controller
+   action_ns: follow_joint_trajectory
+   type: JointTrajectoryActionController
+   default: true
+   joints:
+    #  - joint_1f
+     - joint_2f
+    #  - joint_3f
+    #  - joint_4f
+    #  - joint_5f
