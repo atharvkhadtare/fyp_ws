@@ -1,9 +1,9 @@
-joint1_controller:
+shoulder_yaw_controller:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
         type: JointPositionController
-    joint_name: one
+    joint_name: shoulder_yaw
     joint_speed: 1.0
     motor:
         id: 1
@@ -11,12 +11,12 @@ joint1_controller:
         min: 150
         max: 3900
 
-joint2_controller:
+shoulder_pitch_controller:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
         type: JointPositionController
-    joint_name: two
+    joint_name: shoulder_pitch
     joint_speed: 1.0
     motor:
         id: 2
@@ -24,12 +24,12 @@ joint2_controller:
         min: 1900
         max: 4096
 
-joint3_controller:
+elbow_controller:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
         type: JointPositionController
-    joint_name: three
+    joint_name: elbow
     joint_speed: 1.0
     motor:
         id: 3
@@ -37,12 +37,12 @@ joint3_controller:
         min: 1050
         max: 3250
         
-joint4_controller:
+wrist_pitch_controller:
     controller:
         package: dynamixel_controllers
         module: joint_torque_controller
         type: JointTorqueController
-    joint_name: four
+    joint_name: wrist_pitch
     joint_speed: 1.0
     motor:
         id: 4
@@ -50,12 +50,12 @@ joint4_controller:
         min: 100
         max: 900
         
-joint5_controller:
+wrist_roll_controller:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
         type: JointPositionController
-    joint_name: five
+    joint_name: wrist_roll
     joint_speed: 1.0
     motor:
         id: 5

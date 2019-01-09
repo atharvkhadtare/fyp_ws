@@ -10,11 +10,11 @@ mobile_manipulator:
 # Settings for ros_control hardware interface
   hardware_interface:
     joints:
-      - one
-      - two
-      - three
-      - four
-      - five
+      - shoulder_yaw
+      - shoulder_pitch
+      - elbow
+      - wrist_pitch
+      - wrist_roll
     sim_control_mode: 1  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS
@@ -22,38 +22,13 @@ mobile_manipulator:
     type: joint_state_controller/JointStateController
     publish_rate: 50
   controller_list:
-    []
-  arm_position_controller:
-    type: position_controllers/JointPositionController
-    joints:
-      - one
-      - two
-      - three
-      - four
-      - five
-    gains:
-      one:
-        p: 100
-        d: 1
-        i: 1
-        i_clamp: 1
-      two:
-        p: 100
-        d: 1
-        i: 1
-        i_clamp: 1
-      three:
-        p: 100
-        d: 1
-        i: 1
-        i_clamp: 1
-      four:
-        p: 100
-        d: 1
-        i: 1
-        i_clamp: 1
-      five:
-        p: 100
-        d: 1
-        i: 1
-        i_clamp: 1
+    - name: follow_joint_trajectory_ctrlr
+      action_ns: follow_joint_trajectory
+      default: True
+      type: FollowJointTrajectory
+      joints:
+        - shoulder_yaw
+        - shoulder_pitch
+        - elbow
+        - wrist_pitch
+        - wrist_roll

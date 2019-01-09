@@ -4,7 +4,11 @@
     <node name="controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
           args="--manager=dxl_manager
                 --port pan_tilt_port
-                joint5_controller
+                  shoulder_yaw_controller
+                  shoulder_pitch_controller
+                  elbow_controller
+                  wrist_pitch_controller
+                  wrist_roll_controller
                 "
           output="screen"/>
           
@@ -13,8 +17,12 @@
     <node name="controller_spawner_meta" pkg="dynamixel_controllers" type="controller_spawner.py"
           args="--manager=dxl_manager
                 --type=meta
-                f_arm_controller
-                joint5_controller
+                  arm_controller
+                  shoulder_yaw_controller
+                  shoulder_pitch_controller
+                  elbow_controller
+                  wrist_pitch_controller
+                  wrist_roll_controller
                "
           output="screen"/>
 </launch>

@@ -1,8 +1,8 @@
 controller_list:
   - name: fake_arm_controller
     joints:
-      - one
-      - two
-      - three
-      - four
-      - five
+      - shoulder_yaw
+      - shoulder_pitch
+      - elbow
+      - wrist_pitch
+      - wrist_roll
