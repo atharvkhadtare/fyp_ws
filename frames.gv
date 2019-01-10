@@ -1,0 +1,21 @@
+digraph G {
+"wrist_pitch_motor" -> "wrist_roll_motor"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1547112791.637 sec old)\nBuffer length: 0.000 sec\n"];
+"wrist_bracket" -> "wrist_pitch_motor"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.204 Hz\nMost recent transform: 1547112791.616 ( 0.021 sec old)\nBuffer length: 4.900 sec\n"];
+"elbow_motor" -> "forearm"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1547112791.637 sec old)\nBuffer length: 0.000 sec\n"];
+"elbow_bracket" -> "elbow_motor"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.204 Hz\nMost recent transform: 1547112791.616 ( 0.021 sec old)\nBuffer length: 4.900 sec\n"];
+"biscep" -> "elbow_bracket"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1547112791.637 sec old)\nBuffer length: 0.000 sec\n"];
+"shoulder_pitch_motor" -> "biscep"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1547112791.637 sec old)\nBuffer length: 0.000 sec\n"];
+"forearm" -> "wrist_bracket"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1547112791.637 sec old)\nBuffer length: 0.000 sec\n"];
+"shoulder_bracket" -> "shoulder_pitch_motor"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.204 Hz\nMost recent transform: 1547112791.616 ( 0.021 sec old)\nBuffer length: 4.900 sec\n"];
+"shoulder_yaw_motor" -> "shoulder_bracket"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.204 Hz\nMost recent transform: 1547112791.616 ( 0.021 sec old)\nBuffer length: 4.900 sec\n"];
+"wrist_roll_motor" -> "end_effector"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.204 Hz\nMost recent transform: 1547112791.616 ( 0.021 sec old)\nBuffer length: 4.900 sec\n"];
+"map" -> "bottom_link"[label="Broadcaster: /map_base_tf\nAverage rate: 20.137 Hz\nMost recent transform: 1547112791.652 ( -0.015 sec old)\nBuffer length: 4.867 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1547112791.637"[ shape=plaintext ] ;
+ }->"shoulder_yaw_motor";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1547112791.637"[ shape=plaintext ] ;
+ }->"map";
+}
