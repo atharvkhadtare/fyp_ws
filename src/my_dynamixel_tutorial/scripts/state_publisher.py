@@ -36,9 +36,9 @@ def process(msg):
 		joint_states.name.append(joints[x.id-1])
 
 		if((x.id < 4)):
-			joint_states.position.append((x.position-offset[x.id-1])*(360.0/4096)*(pi/180))
+			joint_states.position.append((x.position - offset[x.id-1])*(360.0/4096)*(pi/180))
 		else:
-			joint_states.position.append((offset[x.id-1]-x.position)*(300.0/1023)*(pi/180))
+			joint_states.position.append((x.position - offset[x.id-1])*(300.0/1023)*(pi/180))
 		#joint_states.velocity.append(x.velocity)
 	
 	pub.publish(joint_states)

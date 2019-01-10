@@ -9,5 +9,7 @@
   <arg name="publish_monitored_planning_scene" value="true" />
  </include>
  # The visualization component of MoveIt!
- <include file="$(find mobile_manipulator_moveit_config)/launch/moveit_rviz.launch"/>
+ <include file="$(find mobile_manipulator_moveit_config)/launch/moveit_rviz.launch">
+ <arg name="config" value="true"/>
+ </include>
 </launch>

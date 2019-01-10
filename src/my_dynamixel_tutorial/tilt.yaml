@@ -7,7 +7,7 @@ shoulder_yaw_controller:
     joint_speed: 1.0
     motor:
         id: 1
-        init: 1
+        init: 1989
         min: 150
         max: 3900
 
@@ -20,7 +20,7 @@ shoulder_pitch_controller:
     joint_speed: 1.0
     motor:
         id: 2
-        init: 1800 #3038
+        init: 3038 #3038
         min: 1900
         max: 4096
 
@@ -40,8 +40,8 @@ elbow_controller:
 wrist_pitch_controller:
     controller:
         package: dynamixel_controllers
-        module: joint_torque_controller
-        type: JointTorqueController
+        module: joint_position_controller
+        type: JointPositionController
     joint_name: wrist_pitch
     joint_speed: 1.0
     motor:
@@ -59,6 +59,6 @@ wrist_roll_controller:
     joint_speed: 1.0
     motor:
         id: 5
-        init: 202
+        init: 620
         min: 70
         max: 719

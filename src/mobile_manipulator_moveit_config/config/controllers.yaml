@@ -1,14 +1,12 @@
-
-# THIS FILE NEEDS CHANGES IN THE NAME PARAM "MAYBE" AND IS SLIGHTLY DIFFERENT THAN eysip!
-
+controller_manager_ns: controller_manager
 controller_list:
  - name: arm_controller
    action_ns: follow_joint_trajectory
    type: FollowJointTrajectory
    default: true
    joints:
-      - shoulder_yaw_controller
-      - shoulder_pitch_controller
-      - elbow_controller
-      - wrist_pitch_controller
-      - wrist_roll_controller
+      - shoulder_yaw
+      - shoulder_pitch
+      - elbow
+      - wrist_pitch
+      - wrist_roll
