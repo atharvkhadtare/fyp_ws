@@ -19,7 +19,7 @@ joints = ["shoulder_yaw", "shoulder_pitch", "elbow", "wrist_pitch", "wrist_roll"
 #Offset for motor id [1,2,3,4,5,6] is specified in the list.
 # offset = [666,512,512,375,512,682]
 # offset = [185, 3000, 2222, 512, 202]
-offset = [1989, 3043, 2220, 509, 620]
+offset = [1989, 3043, 2220, 509, 815]
 
 '''
 Function: process(). Callback for subscriber of raw data from dynamixel motor. 

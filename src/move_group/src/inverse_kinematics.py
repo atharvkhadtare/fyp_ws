@@ -17,11 +17,14 @@ def change_end_pose(group, input_pose):
     # print  "\nOUT: ", input_pose, end_goal
     group.set_pose_target(list_to_pose(end_goal))
     if group.go(wait=True):
+    # if group.plan():
         print "\nSolution found for ", input_pose
         print "\nGroup moved to ", end_goal
     else:
         print "\nNo solution found for ", input_pose
-    group.stop()
+    # group.stop()
+
+home = [0.000119154778374, 0.0258920968167, 0.515676649148, -0.005011902123, -0.00127171250972, -0.250399255128, 0.968128853312]
 
 moveit_commander.roscpp_initialize(sys.argv)
 rospy.init_node('inverse_kinematics', anonymous=True)
@@ -32,7 +35,7 @@ display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path
                                                moveit_msgs.msg.DisplayTrajectory,
                                                queue_size=20)
 planning_frame = group_arm.get_planning_frame()
-group_arm.set_goal_tolerance(0.1)
+group_arm.set_goal_tolerance(0.0005)
 print "============ \nReference frame: %s" % planning_frame
 eef_link = group_arm.get_end_effector_link()
 print "End effector: %s" % eef_link
@@ -45,11 +48,14 @@ print "Group_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()
 
 # change_end_pose(group_arm, [0.0, None, 0.5196, 0.0, 0.0, None, 1.0])
-change_end_pose(group_arm, [0, 0.015, 0.5196, 0, 0, 0, 1.0])
-change_end_pose(group_arm, [0, -0.4559887551713903, 0.07897818182406445, 0.706845410317391, 0, 0, 0.707368055252284]
-)
-change_end_pose(group_arm, [0.127, 0.0, None, None, -0.037, 0.679, 0.729])
-change_end_pose(group_arm, [0.07, 0.9, 0.383, -0.076, -0.037, 0.679, 0.729])
+# change_end_pose(group_arm, [0, 0, 0, 0, 0, 0, 1.0])
+# change_end_pose(group_arm, [0, -0.4559887551713903, 0.07897818182406445, 0.706845410317391, 0, 0, 0.707368055252284])
+# change_end_pose(group_arm, [0.10, 0.10, 0.30, 0, 0, 0, 0])
+change_end_pose(group_arm, home)
+# change_end_pose(group_arm, [0.20, 0.20, 0.20, 0, 0, 0, 0])
+# change_end_pose(group_arm, [0.0, -0.2477628272874607, 0.4472224202239656, 0.3047862245403626, 0.07725225351232594, -0.23323341117218666, 0.9201845589721035])
+# change_end_pose(group_arm, [0.127, 0.0, None, None, -0.037, 0.679, 0.729])
+# change_end_pose(group_arm, [0.07, 0.9, 0.383, -0.076, -0.037, 0.679, 0.729])
 
 print "\nGroup_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()

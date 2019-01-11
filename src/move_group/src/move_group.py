@@ -19,18 +19,18 @@ robot = moveit_commander.RobotCommander()
 scene = moveit_commander.PlanningSceneInterface()
 
 group_name = "arm"
-group = moveit_commander.MoveGroupCommander(group_name)
+group_arm = moveit_commander.MoveGroupCommander(group_name)
 
 display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path',
                                                moveit_msgs.msg.DisplayTrajectory,
                                                queue_size=20)
 
 # We can get the name of the reference frame for this robot:
-planning_frame = group.get_planning_frame()
+planning_frame = group_arm.get_planning_frame()
 print "============ Reference frame: %s" % planning_frame
 
 # We can also print the name of the end-effector link for this group:
-eef_link = group.get_end_effector_link()
+eef_link = group_arm.get_end_effector_link()
 print "============ End effector: %s" % eef_link
 
 # We can get a list of all the groups in the robot:
@@ -40,27 +40,11 @@ print "============ Robot Groups:", robot.get_group_names()
 # Sometimes for debugging it is useful to print the entire state of the
 # robot:
 print "============ Printing group_arm pose"
-print group.get_current_pose()
+print group_arm.get_current_pose()
 print ""
 
-
-# We can get the joint values from the group and adjust some of the values:
-# joint_goal = group.get_current_joint_values()
-# joint_goal[0] = 0
-# joint_goal[1] = 0.785
-# joint_goal[2] = 0
-# joint_goal[3] = -0.785
-# # joint_goal[4] = 0.78
-
-# # The go command can be called with joint values, poses, or without any
-# # parameters if you have already set the pose or joint target for the group
-# group.go(joint_goal, wait=False)
-
-# # Calling ``stop()`` ensures that there is no residual movement
-# group.stop()
-
 # print "============ Printing group_arm pose"
-# print group.get_current_pose()
+# print group_arm.get_current_pose()
 # print ""
 # print "============ Printing robot state"
 # print robot.get_current_state()
@@ -69,23 +53,23 @@ print ""
 pose_goal = geometry_msgs.msg.Pose()
 pose_goal.orientation.w = 1.0
 pose_goal.position.x = 0
-pose_goal.position.y = 0#-0.2668
+pose_goal.position.y = 0 #-0.2668
 pose_goal.position.z = 0.441 #0.3305
-group.set_pose_target(pose_goal)
-# pose_goal = group.get_random_pose()
-plan = group.go(wait=True)
+group_arm.set_pose_target(pose_goal)
+# pose_goal = group_arm.get_random_pose()
+# plan = group_arm.go(wait=True)
 # # # Calling `stop()` ensures that there is no residual movement
-group.stop()
+# group_arm.stop()
 print "Goal Reached"
 print "============ Printing group_arm pose"
-print group.get_current_pose()
+print group_arm.get_current_pose()
 print ""
 
 print "============ Printing group_arm pose"
-print group.get_current_joint_values()
+print group_arm.get_current_joint_values()
 print ""
 # print "============ Printing group_arm pose"
-# print group.get_current_pose()
+# print group_arm.get_current_pose()
 # print ""
 # print "============ Printing robot state"
 # print robot.get_current_state()
@@ -97,4 +81,4 @@ print ""
 # # print ""
 # # # It is always good to clear your targets after planning with poses.
 # # # Note: there is no equivalent function for clear_joint_value_targets()
-group.clear_pose_targets()
+group_arm.clear_pose_targets()

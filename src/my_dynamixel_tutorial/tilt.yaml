@@ -4,7 +4,7 @@ shoulder_yaw_controller:
         module: joint_position_controller
         type: JointPositionController
     joint_name: shoulder_yaw
-    joint_speed: 1.0
+    joint_speed: 1.75
     motor:
         id: 1
         init: 1989
@@ -17,7 +17,7 @@ shoulder_pitch_controller:
         module: joint_position_controller
         type: JointPositionController
     joint_name: shoulder_pitch
-    joint_speed: 1.0
+    joint_speed: 1.75
     motor:
         id: 2
         init: 3038 #3038
@@ -30,7 +30,7 @@ elbow_controller:
         module: joint_position_controller
         type: JointPositionController
     joint_name: elbow
-    joint_speed: 1.0
+    joint_speed: 1.75
     motor:
         id: 3
         init: 2222
@@ -43,7 +43,7 @@ wrist_pitch_controller:
         module: joint_position_controller
         type: JointPositionController
     joint_name: wrist_pitch
-    joint_speed: 1.0
+    joint_speed: 1.75
     motor:
         id: 4
         init: 512
@@ -56,9 +56,9 @@ wrist_roll_controller:
         module: joint_position_controller
         type: JointPositionController
     joint_name: wrist_roll
-    joint_speed: 1.0
+    joint_speed: 1.75
     motor:
         id: 5
-        init: 620
+        init: 815
         min: 70
         max: 719
