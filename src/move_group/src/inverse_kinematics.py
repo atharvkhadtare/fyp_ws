@@ -31,6 +31,8 @@ rospy.init_node('inverse_kinematics', anonymous=True)
 robot = moveit_commander.RobotCommander()
 scene = moveit_commander.PlanningSceneInterface()
 group_arm = moveit_commander.MoveGroupCommander("arm")
+group_arm.set_planner_id("TRRT")
+
 display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path',
                                                moveit_msgs.msg.DisplayTrajectory,
                                                queue_size=20)

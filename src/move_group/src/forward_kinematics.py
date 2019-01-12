@@ -35,7 +35,8 @@ print "Group_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()
 
 # change_joint_angles(group_arm, [1.2, 0.4, -1.57, 1, 0.3])
-change_joint_angles(group_arm, [0, 0.57, 0, 0, 0])
+change_joint_angles(group_arm, [0, 1.57, 0, 0, 0])
+# change_joint_angles(group_arm, [0, 0.57, 0, 0, 0])
 #[0.0, -0.2477628272874607, 0.4472224202239656, 0.3047862245403626, 0.07725225351232594, -0.23323341117218666, 0.9201845589721035]
 print "\nGroup_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()

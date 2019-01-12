@@ -1,0 +1,13 @@
+<launch>
+    <!-- Start tilt joint controller -->
+    <rosparam file="$(find my_dynamixel_tutorial)/tilt.yaml" command="load"/>
+    <node name="tilt_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port pan_tilt_port
+                joint1_controller"
+          output="screen"/>
+
+      <include file="$(find my_dynamixel_tutorial)/launch/controller_manager.launch"/>
+      <include file="$(find my_dynamixel_tutorial)/launch/robot_state.launch"/>
+      <include file="$(find my_dynamixel_tutorial)/launch/start_meta_controller.launch"/>
+</launch>
