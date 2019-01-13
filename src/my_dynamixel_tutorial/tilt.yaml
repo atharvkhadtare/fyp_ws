@@ -7,9 +7,9 @@ shoulder_yaw_controller:
     joint_speed: 1.75
     motor:
         id: 1
-        init: 1989
-        min: 150
-        max: 3900
+        init: 1980
+        min: 0
+        max: 4096
 
 shoulder_pitch_controller:
     controller:
@@ -20,9 +20,9 @@ shoulder_pitch_controller:
     joint_speed: 1.75
     motor:
         id: 2
-        init: 3038 #3038
-        min: 1900
-        max: 4096
+        init: 2000
+        min: 713
+        max: 3250
 
 elbow_controller:
     controller:
@@ -34,8 +34,8 @@ elbow_controller:
     motor:
         id: 3
         init: 2222
-        min: 1050
-        max: 3250
+        min: 923
+        max: 3508
         
 wrist_pitch_controller:
     controller:
@@ -47,8 +47,8 @@ wrist_pitch_controller:
     motor:
         id: 4
         init: 512
-        min: 100
-        max: 900
+        min: 50
+        max: 975
         
 wrist_roll_controller:
     controller:
@@ -59,6 +59,6 @@ wrist_roll_controller:
     joint_speed: 1.75
     motor:
         id: 5
-        init: 815
-        min: 70
-        max: 719
+        init: 512
+        min: 0
+        max: 1024

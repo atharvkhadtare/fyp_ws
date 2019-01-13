@@ -239,15 +239,15 @@
   
   
  
-  <xacro:Revjoint id="shoulder_yaw" trans="0 0 0" rpy="0 0 0" parent="shoulder_yaw_motor" child="shoulder_bracket" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
-  <xacro:Revjoint id="shoulder_pitch" trans="0 0 0.0636" rpy="0 0 0" parent="shoulder_bracket" child="shoulder_pitch_motor" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
+  <xacro:Revjoint id="shoulder_yaw" trans="0 0 0" rpy="0 0 0" parent="shoulder_yaw_motor" child="shoulder_bracket" axis="0 0 1" l="-3.0357" u="3.24426" v="1.0"/>
+  <xacro:Revjoint id="shoulder_pitch" trans="0 0 0.0636" rpy="0 0 0" parent="shoulder_bracket" child="shoulder_pitch_motor" axis="1 0 0" l="-1.973232422" u="1.916503906" v="1.0"/>
   <xacro:FxdJoint id="s1_l2" parent="shoulder_pitch_motor" child="biscep"/>
   <xacro:FxdJoint id="l2_l2B" parent="biscep" child="elbow_bracket"/>
-  <xacro:Revjoint id="elbow" trans="0 0 ${0.0867+(length)}" rpy="0 0 0" parent="elbow_bracket" child="elbow_motor" axis="1 0 0" l="-1.9" u="1.85" v="1.0"/>
+  <xacro:Revjoint id="elbow" trans="0 0 ${0.0867+(length)}" rpy="0 0 0" parent="elbow_bracket" child="elbow_motor" axis="1 0 0" l="-1.99" u="1.971699219" v="1.0"/>
   <xacro:FxdJoint id="e_l3" parent="elbow_motor" child="forearm"/>
   <xacro:FxdJoint id="l3_l3B" parent="forearm" child="wrist_bracket"/>
-  <xacro:Revjoint id="wrist_pitch" trans="0 0 ${0.0988+length}" rpy="0 0 0" parent="wrist_bracket" child="wrist_pitch_motor" axis="1 0 0" l="-2.25" u="2.3" v="1.0"/>
+  <xacro:Revjoint id="wrist_pitch" trans="0 0 ${0.0988+length}" rpy="0 0 0" parent="wrist_bracket" child="wrist_pitch_motor" axis="1 0 0" l="-2.36344086" u="2.368556533" v="1.0"/>
   <xacro:FxdJoint id="WP_WR" parent="wrist_pitch_motor" child="wrist_roll_motor"/>
-  <xacro:Revjoint id="wrist_roll" trans="0 0.015 0.0785" rpy="0 0 0" parent="wrist_roll_motor" child="end_effector" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
+  <xacro:Revjoint id="wrist_roll" trans="0 0.015 0.0785" rpy="0 0 0" parent="wrist_roll_motor" child="end_effector" axis="0 0 1" l="-2.616666666" u="2.616666666" v="1.0"/>
 
 </robot>
