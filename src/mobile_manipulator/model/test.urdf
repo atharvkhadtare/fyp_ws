@@ -7,7 +7,8 @@
   <material name="white">
     <color rgba="1 1 1 1"/>
   </material>
-  <link name="base_link">
+  <!--LINKS-->
+  <link name="shoulder_yaw_motor">
     <inertial>
       <origin rpy="0 0 0 " xyz="0 0 0"/>
       <mass value="0.140"/>
@@ -27,7 +28,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="link1Bracket">
+  <link name="shoulder_bracket">
     <inertial>
       <origin rpy="0 3.14 0 " xyz="0 0 0.025"/>
       <mass value="0.00712"/>
@@ -47,7 +48,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="shoulder1">
+  <link name="shoulder_pitch_motor">
     <inertial>
       <origin rpy="1.57 -3.14 1.57" xyz="0 0 0"/>
       <mass value="0.140"/>
@@ -67,7 +68,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="link2">
+  <link name="biscep">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.0961"/>
       <mass value="0.00048"/>
@@ -87,7 +88,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="link2Bracket">
+  <link name="elbow_bracket">
     <inertial>
       <origin rpy="0 3.14 0" xyz="0 0 0.1441"/>
       <mass value="0.00712"/>
@@ -107,7 +108,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="elbow">
+  <link name="elbow_motor">
     <inertial>
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <mass value="0.140"/>
@@ -127,7 +128,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="link3">
+  <link name="forearm">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.0961"/>
       <mass value="0.00048"/>
@@ -147,7 +148,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="link3Bracket">
+  <link name="wrist_bracket">
     <inertial>
       <origin rpy="1.57 0 1.57" xyz="0 0 0.1948"/>
       <mass value="0.00712"/>
@@ -167,14 +168,14 @@
       </geometry>
     </collision>
   </link>
-  <link name="WristPitch">
+  <link name="wrist_pitch_motor">
     <inertial>
       <origin rpy="-1.57 0 -1.57" xyz="0 0 0"/>
       <mass value="0.05573"/>
       <inertia ixx="0.00001611154" ixy="0.00000001397" ixz="0.0" iyy="0.00000888743" iyz="0.00000015948" izz="0.00001354172"/>
     </inertial>
     <visual>
-      <origin rpy="-1.57 0 -1.57" xyz="0. 0 0"/>
+      <origin rpy="-1.57 0 -1.57" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -187,7 +188,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="WristRoll">
+  <link name="wrist_roll_motor">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0.015 0.0585"/>
       <mass value="0.05573"/>
@@ -209,78 +210,250 @@
   </link>
   <link name="end_effector">
     <inertial>
-      <origin rpy="3.14 0 1.57" xyz="0 0 0"/>
+      <origin rpy="-1.57 3.14 1.57" xyz="0 0 0"/>
       <mass value="0.00712"/>
       <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
     </inertial>
     <visual>
-      <origin rpy="3.14 0 -1.57" xyz="0 0 0"/>
+      <origin rpy="-1.57 3.14 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="3.14 0 1.57" xyz="0 0 0"/>
+      <origin rpy="-1.57 3.14 1.57" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://mobile_manipulator/meshes/FR05-H101K.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/F3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <joint name="one" type="revolute">
+  <link name="gripper_motor">
+    <inertial>
+      <origin rpy="0 0 0 " xyz="0 0 0.02"/>
+      <mass value="0.05573"/>
+      <inertia ixx="0.00001611154" ixy="0.00000001397" ixz="0.0" iyy="0.00000888743" iyz="0.00000015948" izz="0.00001354172"/>
+    </inertial>
+    <visual>
+      <origin rpy="-1.57 3.14 0" xyz="0 0 0.04"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.02"/>
+      <geometry>
+        <box size="0.032 0.04 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="F10_bracket">
+    <inertial>
+      <origin rpy="1.57 0 0 " xyz="0.016 0 0.02"/>
+      <mass value="0.00712"/>
+      <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 3.14 0 " xyz="0.016 0.02 0"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F10.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin rpy="1.57 0 0 " xyz="0.016 0 0.02"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F10.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="F9_bracket">
+    <inertial>
+      <origin rpy="-1.57 0 -1.57" xyz="0.04101 0.00807 0.003"/>
+      <mass value="0.00712"/>
+      <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
+    </inertial>
+    <visual>
+      <origin rpy="-1.57 0 -1.57 " xyz="0.04101 0.00609 0.003"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F9.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin rpy="-1.57 0 -1.57 " xyz="0.04101 0.00807 0.003"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F9.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="F11_bracket">
+    <inertial>
+      <origin rpy="0 -3.14 0 " xyz="0.04101 0.021785 0.003"/>
+      <mass value="0.00712"/>
+      <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
+    </inertial>
+    <visual>
+      <origin rpy="-1.57 -3.14 0 " xyz="0.04101 0.0 0.01962"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin rpy="0 -3.14 0 " xyz="0.04101 0.021785 0.003"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="F3_bracket">
+    <inertial>
+      <origin rpy="0 0 -1.57" xyz="-0.02 -0.01402 0"/>
+      <mass value="0.00712"/>
+      <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57 -1.57" xyz="-0.02 0 0.026"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 -1.57" xyz="-0.02 -0.01402 0"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="F6_bracket">
+    <inertial>
+      <origin rpy="0 0 -1.57" xyz="-0.0222 0.01304 0"/>
+      <mass value="0.00712"/>
+      <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57 -1.57" xyz="-0.0222 0 0.039"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 -1.57" xyz="-0.0222 0.01304 0"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="F11_bracket_1">
+    <inertial>
+      <origin rpy="0 0 0 " xyz="-0.026462 0.029105 0"/>
+      <mass value="0.00712"/>
+      <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57 0 0 " xyz="-0.026462 0 0.055105"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0 " xyz="-0.026462 0.029105 0"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--JOINTS-->
+  <joint name="shoulder_yaw" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="link1Bracket"/>
+    <parent link="shoulder_yaw_motor"/>
+    <child link="shoulder_bracket"/>
     <axis xyz="0 0 1"/>
     <limit effort="30" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
-  <joint name="two" type="revolute">
+  <joint name="shoulder_pitch" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.0636"/>
-    <parent link="link1Bracket"/>
-    <child link="shoulder1"/>
+    <parent link="shoulder_bracket"/>
+    <child link="shoulder_pitch_motor"/>
     <axis xyz="1 0 0"/>
     <limit effort="30" lower="-1.57" upper="1.57" velocity="1.0"/>
   </joint>
   <joint name="s1_l2" type="fixed">
-    <parent link="shoulder1"/>
-    <child link="link2"/>
+    <parent link="shoulder_pitch_motor"/>
+    <child link="biscep"/>
   </joint>
   <joint name="l2_l2B" type="fixed">
-    <parent link="link2"/>
-    <child link="link2Bracket"/>
+    <parent link="biscep"/>
+    <child link="elbow_bracket"/>
   </joint>
-  <joint name="three" type="revolute">
+  <joint name="elbow" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.1827"/>
-    <parent link="link2Bracket"/>
-    <child link="elbow"/>
+    <parent link="elbow_bracket"/>
+    <child link="elbow_motor"/>
     <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-1.57" upper="1.57" velocity="1.0"/>
+    <limit effort="30" lower="-1.9" upper="1.85" velocity="1.0"/>
   </joint>
   <joint name="e_l3" type="fixed">
-    <parent link="elbow"/>
-    <child link="link3"/>
+    <parent link="elbow_motor"/>
+    <child link="forearm"/>
   </joint>
   <joint name="l3_l3B" type="fixed">
-    <parent link="link3"/>
-    <child link="link3Bracket"/>
+    <parent link="forearm"/>
+    <child link="wrist_bracket"/>
   </joint>
-  <joint name="four" type="revolute">
+  <joint name="wrist_pitch" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.1948"/>
-    <parent link="link3Bracket"/>
-    <child link="WristPitch"/>
+    <parent link="wrist_bracket"/>
+    <child link="wrist_pitch_motor"/>
     <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-1.57" upper="1.57" velocity="1.0"/>
+    <limit effort="30" lower="-2.25" upper="2.3" velocity="1.0"/>
   </joint>
   <joint name="WP_WR" type="fixed">
-    <parent link="WristPitch"/>
-    <child link="WristRoll"/>
+    <parent link="wrist_pitch_motor"/>
+    <child link="wrist_roll_motor"/>
   </joint>
-  <joint name="five" type="revolute">
+  <joint name="wrist_roll" type="revolute">
     <origin rpy="0 0 0" xyz="0 0.015 0.0785"/>
-    <parent link="WristRoll"/>
+    <parent link="wrist_roll_motor"/>
     <child link="end_effector"/>
     <axis xyz="0 0 1"/>
     <limit effort="30" lower="-3.14" upper="3.14" velocity="1.0"/>
+  </joint>
+  <joint name="Bracket_gripper" type="fixed">
+    <parent link="end_effector"/>
+    <child link="gripper_motor"/>
+  </joint>
+  <joint name="gripper_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.04"/>
+    <parent link="gripper_motor"/>
+    <child link="F10_bracket"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="30" lower="-3.14" upper="3.14" velocity="1.0"/>
+  </joint>
+  <joint name="left_L" type="fixed">
+    <parent link="F10_bracket"/>
+    <child link="F9_bracket"/>
+  </joint>
+  <joint name="left_H" type="fixed">
+    <parent link="F9_bracket"/>
+    <child link="F11_bracket"/>
+  </joint>
+  <joint name="right_j" type="fixed">
+    <parent link="gripper_motor"/>
+    <child link="F3_bracket"/>
+  </joint>
+  <joint name="right_L" type="fixed">
+    <parent link="F3_bracket"/>
+    <child link="F6_bracket"/>
+  </joint>
+  <joint name="right_H" type="fixed">
+    <parent link="F6_bracket"/>
+    <child link="F11_bracket_1"/>
   </joint>
 </robot>
 

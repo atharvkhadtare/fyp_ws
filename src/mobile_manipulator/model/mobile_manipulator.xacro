@@ -1,6 +1,7 @@
 <?xml version ="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mobile_manipulator">
 
+
 <material name="white">
   <color rgba="1 1 1 1"/>
 </material>  
@@ -15,6 +16,7 @@
 
 <xacro:property name="length" value="0.096"/>
 
+<!--XACROS-->
 <xacro:macro name="MXInertial" params="trans rpy">
   <inertial>
     <origin xyz="${trans}" rpy="${rpy}" />
@@ -150,6 +152,143 @@
     </collision> 
 </xacro:macro> 
 
+<xacro:macro name="F10Inertial" params="trans rpy">
+  <inertial>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <mass value="0.00712" />
+    <inertia ixx="0.00000174511" iyy="0.00000379922" ixz="0.0" ixy="0.0" iyz="0.0" izz="0.00000357521" />
+  </inertial>
+</xacro:macro>
+
+<xacro:macro name="F10Visual" params="trans rpy">
+  <visual>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <geometry>
+      <mesh filename="package://mobile_manipulator/meshes/F10.stl" scale="0.001 0.001 0.001" />
+    </geometry>
+    <material name="white"/>         
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="F10Collision" params="trans rpy">
+    <collision>
+      <origin xyz="${trans}" rpy="${rpy}"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F10.stl" scale="0.001 0.001 0.001"/>
+      </geometry>    
+    </collision> 
+</xacro:macro>  
+
+
+ <xacro:macro name="F9Inertial" params="trans rpy">
+  <inertial>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <mass value="0.00712" />
+    <inertia ixx="0.00000174511" iyy="0.00000379922" ixz="0.0" ixy="0.0" iyz="0.0" izz="0.00000357521" />
+  </inertial>
+</xacro:macro>
+
+<xacro:macro name="F9Visual" params="trans rpy">
+  <visual>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <geometry>
+      <mesh filename="package://mobile_manipulator/meshes/F9.stl" scale="0.001 0.001 0.001" />
+    </geometry>
+    <material name="white"/>         
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="F9Collision" params="trans rpy">
+    <collision>
+      <origin xyz="${trans}" rpy="${rpy}"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F9.stl" scale="0.001 0.001 0.001"/>
+      </geometry>    
+    </collision> 
+</xacro:macro> 
+
+<xacro:macro name="F11Inertial" params="trans rpy">
+  <inertial>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <mass value="0.00712" />
+    <inertia ixx="0.00000174511" iyy="0.00000379922" ixz="0.0" ixy="0.0" iyz="0.0" izz="0.00000357521" />
+  </inertial>
+</xacro:macro>
+
+<xacro:macro name="F11Visual" params="trans rpy">
+  <visual>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <geometry>
+      <mesh filename="package://mobile_manipulator/meshes/F11.stl" scale="0.001 0.001 0.001" />
+    </geometry>
+    <material name="white"/>         
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="F11Collision" params="trans rpy">
+    <collision>
+      <origin xyz="${trans}" rpy="${rpy}"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F11.stl" scale="0.001 0.001 0.001"/>
+      </geometry>    
+    </collision> 
+</xacro:macro>
+
+<xacro:macro name="F3Inertial" params="trans rpy">
+  <inertial>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <mass value="0.00712" />
+    <inertia ixx="0.00000174511" iyy="0.00000379922" ixz="0.0" ixy="0.0" iyz="0.0" izz="0.00000357521" />
+  </inertial>
+</xacro:macro>
+
+<xacro:macro name="F3Visual" params="trans rpy">
+  <visual>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <geometry>
+      <mesh filename="package://mobile_manipulator/meshes/F3.stl" scale="0.001 0.001 0.001" />
+    </geometry>
+    <material name="white"/>         
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="F3Collision" params="trans rpy">
+    <collision>
+      <origin xyz="${trans}" rpy="${rpy}"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>    
+    </collision> 
+</xacro:macro>
+
+<xacro:macro name="F6Inertial" params="trans rpy">
+  <inertial>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <mass value="0.00712" />
+    <inertia ixx="0.00000174511" iyy="0.00000379922" ixz="0.0" ixy="0.0" iyz="0.0" izz="0.00000357521" />
+  </inertial>
+</xacro:macro>
+
+<xacro:macro name="F6Visual" params="trans rpy">
+  <visual>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <geometry>
+      <mesh filename="package://mobile_manipulator/meshes/F6.stl" scale="0.001 0.001 0.001" />
+    </geometry>
+    <material name="white"/>         
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="F6Collision" params="trans rpy">
+    <collision>
+      <origin xyz="${trans}" rpy="${rpy}"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>    
+    </collision> 
+</xacro:macro>
+
+
 <xacro:macro name="Revjoint" params="id trans rpy parent child axis l u v">
     <joint name="${id}" type="revolute">
       <origin xyz="${trans}" rpy="${rpy}"/>
@@ -167,87 +306,134 @@
     </joint>
 </xacro:macro>        
 
+<!--LINKS-->
 
-
-
-  <link name="shoulder_yaw_motor">
+<link name="shoulder_yaw_motor">
     <xacro:MXInertial trans="0 0 0" rpy="0 0 0 "/>  
     <xacro:MXVisual trans="0 0 0" rpy="0 0 0 "/>
     <xacro:MXCollision trans="0 0 0" rpy="0 0 0"/>
-  </link>
+</link>
 
-  <link name="shoulder_bracket">
+<link name="shoulder_bracket">
     <xacro:BracketInertial trans="0 0 0.025" rpy="0 3.14 0 "/>
     <xacro:BracketVisual trans="0 0 0.025" rpy="0 3.14 0 "/>
     <xacro:BracketCollision trans="0 0 0.025" rpy="0 3.14 0 "/>
-  </link>  
+</link>  
 
-  <link name="shoulder_pitch_motor">
+<link name="shoulder_pitch_motor">
     <xacro:MXInertial trans="0 0 0" rpy="1.57 -3.14 1.57"/>  
     <xacro:MXVisual trans="0 0 0" rpy="1.57 -3.14 1.57"/>
     <xacro:MXCollision trans="0 0 0" rpy="1.57 -3.14 1.57"/>
-  </link>
+</link>
 
-  <link name="biscep">
+<link name="biscep">
     <xacro:LinkInertial trans="0 0 ${0.0481+(length/2)}" rpy="0 0 0" />
     <xacro:LinkVisual trans="0 0 ${0.0481+(length/2)}" rpy="0 0 0" />
     <xacro:LinkCollision trans="0 0 ${0.0481+(length/2)}" rpy="0 0 0" />
-  </link> 
+</link> 
 
-  <link name="elbow_bracket">
+<link name="elbow_bracket">
     <xacro:BracketInertial trans="0 0 ${0.0481+length}" rpy="0 3.14 0"/>
     <xacro:BracketVisual trans="0 0 ${0.0481+length}" rpy="0 3.14 0"/>
     <xacro:BracketCollision trans="0 0 ${0.0481+length}" rpy="0 3.14 0"/>
-  </link>   
+</link>   
 
-  <link name="elbow_motor">
+<link name="elbow_motor">
     <xacro:MXInertial trans="0 0 0" rpy="1.57 0 0"/>  
     <xacro:MXVisual trans="0 0 0" rpy="1.57 3.14 -1.57"/>
     <xacro:MXCollision trans="0 0 0" rpy="1.57 0 0"/>
-  </link>
+</link>
 
-  <link name="forearm">
+<link name="forearm">
     <xacro:LinkInertial trans="0 0 ${0.0481+(length/2)}" rpy="0 0 0" />
     <xacro:LinkVisual trans="0 0 ${0.0481+(length/2)}" rpy="0 0 0" />
     <xacro:LinkCollision trans="0 0 ${0.0481+(length/2)}" rpy="0 0 0" />
-  </link> 
+</link> 
   
-  <link name="wrist_bracket">
+<link name="wrist_bracket">
     <xacro:AxBracketInertial trans="0 0 ${0.0988+length}" rpy="1.57 0 1.57"/>
     <xacro:AxBracketVisual trans="0 0 ${0.0988+length}" rpy="1.57 0 1.57"/>
     <xacro:AxBracketCollision trans="0 0 ${0.0988+length}" rpy="1.57 0 1.57"/>
-  </link>
+</link>
 
-  <link name="wrist_pitch_motor">
+<link name="wrist_pitch_motor">
     <xacro:AXInertial trans="0 0 0" rpy="-1.57 0 -1.57"/>
-    <xacro:AXVisual trans="0. 0 0" rpy="-1.57 0 -1.57"/>
+    <xacro:AXVisual trans="0 0 0" rpy="-1.57 0 -1.57"/>
     <xacro:AXCollision trans="0 0 0" rpy="-1.57 0 -1.57"/>
-  </link>     
+</link>     
 
-  <link name="wrist_roll_motor">
+<link name="wrist_roll_motor">
     <xacro:AXInertial trans="0 0.015 0.0585" rpy="0 0 0"/>
     <xacro:AXVisual trans="0 0.015 0.0585" rpy="0 0 0"/>
     <xacro:AXCollision trans="0 0.015 0.0585" rpy="0 0 0"/>
-  </link> 
+</link> 
 
- <link name="end_effector">
-    <xacro:BracketInertial trans="0 0 0" rpy="3.14 0 1.57"/>
-    <xacro:BracketVisual trans="0 0 0" rpy="3.14 0 -1.57"/>
-    <xacro:BracketCollision trans="0 0 0" rpy="3.14 0 1.57"/>
-  </link>
+<link name="end_effector">
+    <xacro:F3Inertial trans="0 0 0" rpy="-1.57 3.14 1.57"/>
+    <xacro:F3Visual trans="0 0 0" rpy="-1.57 3.14 0"/>
+    <xacro:F3Collision trans="0 0 0" rpy="-1.57 3.14 1.57"/>
+</link>
 
+<link name="gripper_motor">
+    <xacro:AXInertial trans="0 0 0.02" rpy="0 0 0 "/>  
+    <xacro:AXVisual trans="0 0 0.04" rpy="-1.57 3.14 0"/>
+    <xacro:AXCollision trans="0 0 0.02" rpy="0 0 0"/>
+</link>
+
+<link name="F10_bracket">
+    <xacro:F10Inertial trans="0.016 0 0.02" rpy="1.57 0 0 "/>
+    <xacro:F10Visual trans="0.016 0.02 0" rpy="0 3.14 0 "/>
+    <xacro:F10Collision trans="0.016 0 0.02" rpy="1.57 0 0 "/>
+</link>  
+
+<link name="F9_bracket">
+    <xacro:F9Inertial trans="0.04101 0.00807 0.003" rpy="-1.57 0 -1.57"/>
+    <xacro:F9Visual trans="0.04101 0.00609 0.003" rpy="-1.57 0 -1.57 "/>
+    <xacro:F9Collision trans="0.04101 0.00807 0.003" rpy="-1.57 0 -1.57 "/>
+</link>
+
+<link name="F11_bracket">
+    <xacro:F11Inertial trans="0.04101 0.021785 0.003" rpy="0 -3.14 0 "/>
+    <xacro:F11Visual trans="0.04101 0.0 0.01962" rpy="-1.57 -3.14 0 "/>
+    <xacro:F11Collision trans="0.04101 0.021785 0.003" rpy="0 -3.14 0 "/>
+</link>
+
+<link name="F3_bracket">
+    <xacro:F3Inertial trans="-0.02 -0.01402 0" rpy="0 0 -1.57"/>
+    <xacro:F3Visual trans="-0.02 0 0.026" rpy="0 1.57 -1.57"/>
+    <xacro:F3Collision trans="-0.02 -0.01402 0" rpy="0 0 -1.57"/>
+</link>
+
+<link name="F6_bracket">
+    <xacro:F6Inertial trans="-0.0222 0.01304 0" rpy="0 0 -1.57"/>
+    <xacro:F6Visual trans="-0.0222 0 0.039" rpy="0 1.57 -1.57"/>
+    <xacro:F6Collision trans="-0.0222 0.01304 0" rpy="0 0 -1.57"/>
+</link>
+
+<link name="F11_bracket_1">
+    <xacro:F11Inertial trans="-0.026462 0.029105 0" rpy="0 0 0 "/>
+    <xacro:F11Visual trans="-0.026462 0 0.055105" rpy="1.57 0 0 "/>
+    <xacro:F11Collision trans="-0.026462 0.029105 0" rpy="0 0 0 "/>
+</link>
   
-  
+<!--JOINTS-->
  
   <xacro:Revjoint id="shoulder_yaw" trans="0 0 0" rpy="0 0 0" parent="shoulder_yaw_motor" child="shoulder_bracket" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
   <xacro:Revjoint id="shoulder_pitch" trans="0 0 0.0636" rpy="0 0 0" parent="shoulder_bracket" child="shoulder_pitch_motor" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
   <xacro:FxdJoint id="s1_l2" parent="shoulder_pitch_motor" child="biscep"/>
   <xacro:FxdJoint id="l2_l2B" parent="biscep" child="elbow_bracket"/>
-  <xacro:Revjoint id="elbow" trans="0 0 ${0.0867+(length)}" rpy="0 0 0" parent="elbow_bracket" child="elbow_motor" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
+  <xacro:Revjoint id="elbow" trans="0 0 ${0.0867+(length)}" rpy="0 0 0" parent="elbow_bracket" child="elbow_motor" axis="1 0 0" l="-1.9" u="1.85" v="1.0"/>
   <xacro:FxdJoint id="e_l3" parent="elbow_motor" child="forearm"/>
   <xacro:FxdJoint id="l3_l3B" parent="forearm" child="wrist_bracket"/>
-  <xacro:Revjoint id="wrist_pitch" trans="0 0 ${0.0988+length}" rpy="0 0 0" parent="wrist_bracket" child="wrist_pitch_motor" axis="1 0 0" l="-1.57" u="1.57" v="1.0"/>
+  <xacro:Revjoint id="wrist_pitch" trans="0 0 ${0.0988+length}" rpy="0 0 0" parent="wrist_bracket" child="wrist_pitch_motor" axis="1 0 0" l="-2.25" u="2.3" v="1.0"/>
   <xacro:FxdJoint id="WP_WR" parent="wrist_pitch_motor" child="wrist_roll_motor"/>
   <xacro:Revjoint id="wrist_roll" trans="0 0.015 0.0785" rpy="0 0 0" parent="wrist_roll_motor" child="end_effector" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
+  <xacro:FxdJoint id="Bracket_gripper" parent="end_effector" child="gripper_motor"/>
+  <xacro:Revjoint id="gripper_joint" trans="0 0 0.04" rpy="0 0 0" parent="gripper_motor" child="F10_bracket" axis="0 1 0" l="-3.14" u="3.14" v="1.0"/>  
+  <xacro:FxdJoint id="left_L" parent="F10_bracket" child="F9_bracket"/>
+  <xacro:FxdJoint id="left_H" parent="F9_bracket" child="F11_bracket"/>
+  <xacro:FxdJoint id="right_j" parent="gripper_motor" child="F3_bracket"/>
+  <xacro:FxdJoint id="right_L" parent="F3_bracket" child="F6_bracket"/>
+  <xacro:FxdJoint id="right_H" parent="F6_bracket" child="F11_bracket_1"/>
 
 </robot>
