@@ -368,7 +368,7 @@
     <xacro:AXCollision trans="0 0.015 0.0585" rpy="0 0 0"/>
 </link> 
 
-<link name="end_effector">
+<link name="wrist_roll_bracket">
     <xacro:F3Inertial trans="0 0 0" rpy="-1.57 3.14 1.57"/>
     <xacro:F3Visual trans="0 0 0" rpy="-1.57 3.14 0"/>
     <xacro:F3Collision trans="0 0 0" rpy="-1.57 3.14 1.57"/>
@@ -392,7 +392,7 @@
     <xacro:F9Collision trans="0.04101 0.00807 0.003" rpy="-1.57 0 -1.57 "/>
 </link>
 
-<link name="F11_bracket">
+<link name="end_effector_l">
     <xacro:F11Inertial trans="0.04101 0.021785 0.003" rpy="0 -3.14 0 "/>
     <xacro:F11Visual trans="0.04101 0.0 0.01962" rpy="-1.57 -3.14 0 "/>
     <xacro:F11Collision trans="0.04101 0.021785 0.003" rpy="0 -3.14 0 "/>
@@ -410,7 +410,7 @@
     <xacro:F6Collision trans="-0.0222 0.01304 0" rpy="0 0 -1.57"/>
 </link>
 
-<link name="F11_bracket_1">
+<link name="end_effector_r">
     <xacro:F11Inertial trans="-0.026462 0.029105 0" rpy="0 0 0 "/>
     <xacro:F11Visual trans="-0.026462 0 0.055105" rpy="1.57 0 0 "/>
     <xacro:F11Collision trans="-0.026462 0.029105 0" rpy="0 0 0 "/>
@@ -427,13 +427,13 @@
   <xacro:FxdJoint id="l3_l3B" parent="forearm" child="wrist_bracket"/>
   <xacro:Revjoint id="wrist_pitch" trans="0 0 ${0.0988+length}" rpy="0 0 0" parent="wrist_bracket" child="wrist_pitch_motor" axis="1 0 0" l="-2.25" u="2.3" v="1.0"/>
   <xacro:FxdJoint id="WP_WR" parent="wrist_pitch_motor" child="wrist_roll_motor"/>
-  <xacro:Revjoint id="wrist_roll" trans="0 0.015 0.0785" rpy="0 0 0" parent="wrist_roll_motor" child="end_effector" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
-  <xacro:FxdJoint id="Bracket_gripper" parent="end_effector" child="gripper_motor"/>
+  <xacro:Revjoint id="wrist_roll" trans="0 0.015 0.0785" rpy="0 0 0" parent="wrist_roll_motor" child="wrist_roll_bracket" axis="0 0 1" l="-3.14" u="3.14" v="1.0"/>
+  <xacro:FxdJoint id="Bracket_gripper" parent="wrist_roll_bracket" child="gripper_motor"/>
   <xacro:Revjoint id="gripper_joint" trans="0 0 0.04" rpy="0 0 0" parent="gripper_motor" child="F10_bracket" axis="0 1 0" l="-3.14" u="3.14" v="1.0"/>  
   <xacro:FxdJoint id="left_L" parent="F10_bracket" child="F9_bracket"/>
-  <xacro:FxdJoint id="left_H" parent="F9_bracket" child="F11_bracket"/>
+  <xacro:FxdJoint id="left_H" parent="F9_bracket" child="end_effector_l"/>
   <xacro:FxdJoint id="right_j" parent="gripper_motor" child="F3_bracket"/>
   <xacro:FxdJoint id="right_L" parent="F3_bracket" child="F6_bracket"/>
-  <xacro:FxdJoint id="right_H" parent="F6_bracket" child="F11_bracket_1"/>
+  <xacro:FxdJoint id="right_H" parent="F6_bracket" child="end_effector_r"/>
 
 </robot>
