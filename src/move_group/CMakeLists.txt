@@ -149,6 +149,11 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+#----------------------------------------------------------------------------------------------------------
+add_executable(move_group src/forward_kinematics_cpp.cpp)
+target_link_libraries(move_group ${catkin_LIBRARIES})
+#----------------------------------------------------------------------------------------------------------
+
 #############
 ## Install ##
 #############
