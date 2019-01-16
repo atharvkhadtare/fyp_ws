@@ -129,7 +129,7 @@ include_directories(
 ## either from message generation or dynamic reconfigure
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-## Declare a C++ executable
+## Declare a C++ executable 
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/move_group_node.cpp)
@@ -149,10 +149,15 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-#----------------------------------------------------------------------------------------------------------
-add_executable(move_group src/forward_kinematics_cpp.cpp)
-target_link_libraries(move_group ${catkin_LIBRARIES})
-#----------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------#
+#WE ADD STUFF HERE
+
+#find_package(Eigen3 REQUIRED)
+#include_directories(SYSTEM ${Boost_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIRS})
+#add_executable(move_group src/forward_kinematics_cpp.cpp)
+#target_link_libraries(move_group ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
+#----------------------------------------------------------------------------------------------------#
 
 #############
 ## Install ##

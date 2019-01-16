@@ -17,7 +17,7 @@ rospy.init_node('library_compute_cartesian_path', anonymous=True)
 robot = moveit_commander.RobotCommander()
 scene = moveit_commander.PlanningSceneInterface()
 group_arm = moveit_commander.MoveGroupCommander("arm")
-# group_arm.set_planner_id("TRRT")
+group_arm.set_planner_id("TRRT")
 
 display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path',
                                                moveit_msgs.msg.DisplayTrajectory,
@@ -53,30 +53,33 @@ planning_frame = group_arm.get_planning_frame()
 # create_linear_path([0, 0, 0, 0, 0, 0], [1, 2, 3, 4, 5, 6], 10)
 
 waypoints = []
-scale = 5
+scale = 1
 wpose = group_arm.get_current_pose().pose
 waypoints.append(copy.deepcopy(wpose))
-wpose.position.z -= scale * 0.1  # First move up (z)
-wpose.position.y += scale * 0.2  # and sideways (y)
-waypoints.append(copy.deepcopy(wpose))
 
-wpose.position.x += scale * 0.1  # Second move forward/backwards in (x)
+wpose.position.x += scale * 0.08  # Second move forward/backwards in (x)
 waypoints.append(copy.deepcopy(wpose))
+# wpose.position.y -= scale * 0.08  # and sideways (y)
+# wpose.position.z += scale * 0.08  # First move up (z)
+# waypoints.append(copy.deepcopy(wpose))
+# wpose.position.y += scale * 0.02  # and sideways (y)
+# wpose.position.z -= scale * 0.08  # First move up (z)
+# waypoints.append(copy.deepcopy(wpose))
 
-wpose.position.y -= scale * 0.1  # Third move sideways (y)
-waypoints.append(copy.deepcopy(wpose))
+# wpose.position.y += scale * 0.05  # Third move sideways (y)
+# waypoints.append(copy.deepcopy(wpose))
 print waypoints
 (plan, fraction) = group_arm.compute_cartesian_path(
                                     waypoints,   # waypoints to follow
-                                    0.25,        # eef_step
-                                    2, avoid_collisions=True)         # jump_threshold
+                                    0.01,        # eef_step
+                                    20)         # jump_threshold
 
-
-display_trajectory = moveit_msgs.msg.DisplayTrajectory()
-display_trajectory.trajectory_start = robot.get_current_state()
-display_trajectory.trajectory.append(plan)
-# Publish
-display_trajectory_publisher.publish(display_trajectory)
+print "fraction :", fraction
+# display_trajectory = moveit_msgs.msg.DisplayTrajectory()
+# display_trajectory.trajectory_start = robot.get_current_state()
+# display_trajectory.trajectory.append(plan)
+# # Publish
+# display_trajectory_publisher.publish(display_trajectory)
 
 
 print plan

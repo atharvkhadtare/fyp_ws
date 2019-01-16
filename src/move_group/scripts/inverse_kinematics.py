@@ -39,7 +39,7 @@ display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path
                                                moveit_msgs.msg.DisplayTrajectory,
                                                queue_size=20)
 planning_frame = group_arm.get_planning_frame()
-group_arm.set_goal_tolerance(0.0005)
+group_arm.set_goal_tolerance(0.005)
 print "============ \nReference frame: %s" % planning_frame
 eef_link = group_arm.get_end_effector_link()
 print "End effector: %s" % eef_link
@@ -51,13 +51,13 @@ print "Robot Groups:", robot.get_group_names(), "\n============"
 print "Group_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()
 
-end_effector_coordinate = [0.000119154778374, 0.128920968167, 0.205676649148]
-end_effector_coordinate = [0.1, 0.197971252863, 0.157264105097]
+end_effector_coordinate = [0.0, 0.18, 0.15]
+# end_effector_coordinate = [0.1, 0.197971252863, 0.157264105097]
 end_effector_orientatation = [-3.14, 1.57, 0] #in euler
 # end_effector_orientatation = [None, None, None] #in euler
 quaternion = tf.transformations.quaternion_from_euler(end_effector_orientatation[0],end_effector_orientatation[1],end_effector_orientatation[2])
 end_effector_coordinate.extend(quaternion)
-
+end_effector_coordinate = [0.000568104599418, 0.185172728856, 0.166854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623]
 # change_end_pose(group_arm, [0.0, None, 0.5196, 0.0, 0.0, None, 1.0])
 # change_end_pose(group_arm, [0, 0, 0, 0, 0, 0, 1.0])
 # change_end_pose(group_arm, [0, -0.4559887551713903, 0.07897818182406445, 0.706845410317391, 0, 0, 0.707368055252284])
