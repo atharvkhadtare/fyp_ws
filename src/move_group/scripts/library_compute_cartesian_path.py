@@ -52,29 +52,45 @@ planning_frame = group_arm.get_planning_frame()
 # 	print quat_arrays
 # create_linear_path([0, 0, 0, 0, 0, 0], [1, 2, 3, 4, 5, 6], 10)
 
+# group_arm.set_goal_orientation_tolerance(10)
+
+fraction = 0.0
+maxtries = 100
+attempts = 0 
+
+
 waypoints = []
 scale = 1
 wpose = group_arm.get_current_pose().pose
 waypoints.append(copy.deepcopy(wpose))
 
-wpose.position.x += scale * 0.08  # Second move forward/backwards in (x)
+# wpose.orientation.x = 0.0
+# wpose.orientation.y = 0.0
+# wpose.or
+# ientation.z = 0.0
+# wpose.orientation.w = 0.0
+
+wpose.position.x -= scale * 0.05  # and sideways (y)
+# wpose.position.z += scale * 0.08  # First move up (z)
 waypoints.append(copy.deepcopy(wpose))
-# wpose.position.y -= scale * 0.08  # and sideways (y)
+# wpose.position.y += scale * 0.08  # and sideways (y)
 # wpose.position.z += scale * 0.08  # First move up (z)
 # waypoints.append(copy.deepcopy(wpose))
-# wpose.position.y += scale * 0.02  # and sideways (y)
-# wpose.position.z -= scale * 0.08  # First move up (z)
+# wpose.position.y += scale * 0.08  # Second move forward/backwards in (x)
+# waypoints.append(copy.deepcopy(wpose))
+# wpose.position.z -= scale * 0.08  # Third move sideways (y)
 # waypoints.append(copy.deepcopy(wpose))
 
-# wpose.position.y += scale * 0.05  # Third move sideways (y)
-# waypoints.append(copy.deepcopy(wpose))
 print waypoints
-(plan, fraction) = group_arm.compute_cartesian_path(
+
+while fraction < 1.0 and attempts < maxtries: 
+    (plan, fraction) = group_arm.compute_cartesian_path(
                                     waypoints,   # waypoints to follow
                                     0.01,        # eef_step
-                                    20)         # jump_threshold
+                                    0.0)         # jump_threshold
+    attempts += 1
+    print "fraction :", fraction
 
-print "fraction :", fraction
 # display_trajectory = moveit_msgs.msg.DisplayTrajectory()
 # display_trajectory.trajectory_start = robot.get_current_state()
 # display_trajectory.trajectory.append(plan)
