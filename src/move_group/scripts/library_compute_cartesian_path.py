@@ -54,10 +54,6 @@ planning_frame = group_arm.get_planning_frame()
 
 # group_arm.set_goal_orientation_tolerance(10)
 
-fraction = 0.0
-maxtries = 100
-attempts = 0 
-
 
 waypoints = []
 scale = 1
@@ -83,13 +79,12 @@ waypoints.append(copy.deepcopy(wpose))
 
 print waypoints
 
-while fraction < 1.0 and attempts < maxtries: 
-    (plan, fraction) = group_arm.compute_cartesian_path(
-                                    waypoints,   # waypoints to follow
-                                    0.01,        # eef_step
-                                    0.0)         # jump_threshold
-    attempts += 1
-    print "fraction :", fraction
+(plan, fraction) = group_arm.compute_cartesian_path(
+                                waypoints,   # waypoints to follow
+                                0.001,        # eef_step
+                                0.0)         # jump_threshold
+
+print "fraction :", fraction
 
 # display_trajectory = moveit_msgs.msg.DisplayTrajectory()
 # display_trajectory.trajectory_start = robot.get_current_state()
