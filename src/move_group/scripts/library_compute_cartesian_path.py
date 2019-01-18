@@ -66,16 +66,16 @@ waypoints.append(copy.deepcopy(wpose))
 # ientation.z = 0.0
 # wpose.orientation.w = 0.0
 
-wpose.position.x -= scale * 0.05  # and sideways (y)
+wpose.position.y -= scale * 0.05  # and sideways (y)
 # wpose.position.z += scale * 0.08  # First move up (z)
 waypoints.append(copy.deepcopy(wpose))
 # wpose.position.y += scale * 0.08  # and sideways (y)
-# wpose.position.z += scale * 0.08  # First move up (z)
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.y += scale * 0.08  # Second move forward/backwards in (x)
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.z -= scale * 0.08  # Third move sideways (y)
-# waypoints.append(copy.deepcopy(wpose))
+wpose.position.z += scale * 0.08  # First move up (z)
+waypoints.append(copy.deepcopy(wpose))
+wpose.position.y += scale * 0.08  # Second move forward/backwards in (x)
+waypoints.append(copy.deepcopy(wpose))
+wpose.position.z -= scale * 0.08  # Third move sideways (y)
+waypoints.append(copy.deepcopy(wpose))
 
 print waypoints
 
