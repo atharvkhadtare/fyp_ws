@@ -166,7 +166,32 @@
       <child link="${child}"/>
     </joint>
 </xacro:macro>        
+<xacro:macro name="F10Inertial" params="trans rpy">
+  <inertial>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <mass value="0.00712" />
+    <inertia ixx="0.00000174511" iyy="0.00000379922" ixz="0.0" ixy="0.0" iyz="0.0" izz="0.00000357521" />
+  </inertial>
+</xacro:macro>
 
+<xacro:macro name="F10Visual" params="trans rpy">
+  <visual>
+    <origin xyz="${trans}" rpy="${rpy}"/>
+    <geometry>
+      <mesh filename="package://mobile_manipulator/meshes/F10.stl" scale="0.001 0.001 0.001" />
+    </geometry>
+    <material name="white"/>         
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="F10Collision" params="trans rpy">
+    <collision>
+      <origin xyz="${trans}" rpy="${rpy}"/>
+      <geometry>
+        <mesh filename="package://mobile_manipulator/meshes/F10.stl" scale="0.001 0.001 0.001"/>
+      </geometry>    
+    </collision> 
+</xacro:macro>  
 
 
 
@@ -229,11 +254,17 @@
     <xacro:AXVisual trans="0 0.015 0.0585" rpy="0 0 0"/>
     <xacro:AXCollision trans="0 0.015 0.0585" rpy="0 0 0"/>
   </link> 
-
+<!-- 
  <link name="end_effector">
     <xacro:BracketInertial trans="0 0 0" rpy="3.14 0 1.57"/>
     <xacro:BracketVisual trans="0 0 0" rpy="3.14 0 -1.57"/>
     <xacro:BracketCollision trans="0 0 0" rpy="3.14 0 1.57"/>
+  </link>
+   -->
+ <link name="end_effector">
+    <xacro:F10Inertial trans="0 0.015 0" rpy="1.57 0 1.57"/>
+    <xacro:F10Visual trans="0 0.015 0" rpy="1.57 0 1.57"/>
+    <xacro:F10Collision trans="0 0.015 0" rpy="1.57 0 1.57"/>
   </link>
 
   
