@@ -189,39 +189,46 @@
   </link>
   <link name="wrist_roll_motor">
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0.015 0.0585"/>
+      <origin rpy="-1.570 0 0" xyz="0 0.015 0.0585"/>
       <mass value="0.05573"/>
       <inertia ixx="0.00001611154" ixy="0.00000001397" ixz="0.0" iyy="0.00000888743" iyz="0.00000015948" izz="0.00001354172"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0.015 0.0585"/>
+      <origin rpy="-1.57 3.14 0" xyz="0 0.035 0.027"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0.015 0.0585"/>
+      <origin rpy="-1.57 0 0" xyz="0 0.015 0.0585"/>
       <geometry>
         <box size="0.032 0.04 0.05"/>
       </geometry>
     </collision>
   </link>
+  <!-- 
+ <link name="end_effector">
+    <xacro:BracketInertial trans="0 0 0" rpy="3.14 0 1.57"/>
+    <xacro:BracketVisual trans="0 0 0" rpy="3.14 0 -1.57"/>
+    <xacro:BracketCollision trans="0 0 0" rpy="3.14 0 1.57"/>
+  </link>
+   -->
   <link name="end_effector">
     <inertial>
-      <origin rpy="3.14 0 1.57" xyz="0 0 0"/>
+      <origin rpy="1.57 0 1.57" xyz="0 0.015 0"/>
       <mass value="0.00712"/>
       <inertia ixx="0.00000174511" ixy="0.0" ixz="0.0" iyy="0.00000379922" iyz="0.0" izz="0.00000357521"/>
     </inertial>
     <visual>
-      <origin rpy="1.57 0 1.57" xyz="0 0.015 0"/>
+      <origin rpy="1.57 1.57 1.57" xyz="0 0.040 -0.016"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/F10.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="3.14 0 1.57" xyz="0 0 0"/>
+      <origin rpy="1.57 0 1.57" xyz="0 0.015 0"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/F10.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -276,10 +283,10 @@
     <child link="wrist_roll_motor"/>
   </joint>
   <joint name="wrist_roll" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0.015 0.0785"/>
+    <origin rpy="0 0 0" xyz="0 0.015 0.027"/>
     <parent link="wrist_roll_motor"/>
     <child link="end_effector"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="0 1 0"/>
     <limit effort="30" lower="-3.14" upper="+3.14" velocity="1.0"/>
   </joint>
   <!-- <xacro:Revjoint id="wrist_roll" trans="0 0.015 0.0785" rpy="0 0 0" parent="wrist_roll_motor" child="end_effector" axis="0 0 1" l="-2.616666666" u="2.616666666" v="1.0"/> -->
