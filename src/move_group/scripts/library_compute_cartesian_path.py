@@ -56,7 +56,7 @@ planning_frame = group_arm.get_planning_frame()
 
 
 waypoints = []
-scale = 1
+scale = 0.01
 wpose = group_arm.get_current_pose().pose
 waypoints.append(copy.deepcopy(wpose))
 
@@ -66,8 +66,18 @@ waypoints.append(copy.deepcopy(wpose))
 # ientation.z = 0.0
 # wpose.orientation.w = 0.0
 
-wpose.position.x += scale * 0.5  # and sideways (y)
+wpose.position.x += scale * -100  # and sideways (y)
 # wpose.position.z += scale * 0.08  # First move up (z)
+# wpose.position.z +=
+# wpose.position.z +=
+# wpose.position.z +=
+# wpose.position.z +=
+# wpose.position.z +=
+# wpose.position.z +=
+# wpose.position.z +=
+# wpose.position.z +=
+# wpose.position.z +=
+# wpose.position.z +=
 waypoints.append(copy.deepcopy(wpose))
 # wpose.position.y += scale * 0.08  # and sideways (y)
 # wpose.position.z += scale * 0.08  # First move up (z)
@@ -78,7 +88,9 @@ waypoints.append(copy.deepcopy(wpose))
 # waypoints.append(copy.deepcopy(wpose))
 
 print waypoints
-
+display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path',
+                                               moveit_msgs.msg.DisplayTrajectory,
+                                               queue_size=20)
 (plan, fraction) = group_arm.compute_cartesian_path(
                                 waypoints,   # waypoints to follow
                                 0.001,        # eef_step
