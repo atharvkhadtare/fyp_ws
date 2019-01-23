@@ -78,10 +78,10 @@ wpose.position.x += scale * -100  # and sideways (y)
 # wpose.position.z +=
 # wpose.position.z +=
 # wpose.position.z +=
-waypoints.append(copy.deepcopy(wpose))
-# wpose.position.y += scale * 0.08  # and sideways (y)
-# wpose.position.z += scale * 0.08  # First move up (z)
 # waypoints.append(copy.deepcopy(wpose))
+# wpose.position.y += scale * 8  # and sideways (y)
+# wpose.position.z += scale * 0.08  # First move up (z)
+waypoints.append(copy.deepcopy(wpose))
 # wpose.position.x += scale * 0.08  # Second move forward/backwards in (x)
 # waypoints.append(copy.deepcopy(wpose))
 # wpose.position.z -= scale * 0.08  # Third move sideways (y)
