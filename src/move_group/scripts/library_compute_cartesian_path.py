@@ -56,7 +56,7 @@ planning_frame = group_arm.get_planning_frame()
 
 
 waypoints = []
-scale = 0.01
+scale = 0.01*0.75
 wpose = group_arm.get_current_pose().pose
 waypoints.append(copy.deepcopy(wpose))
 
@@ -66,21 +66,17 @@ waypoints.append(copy.deepcopy(wpose))
 # ientation.z = 0.0
 # wpose.orientation.w = 0.0
 
-wpose.position.x += scale * -100  # and sideways (y)
-# wpose.position.z += scale * 0.08  # First move up (z)
-# wpose.position.z +=
-# wpose.position.z +=
-# wpose.position.z +=
-# wpose.position.z +=
-# wpose.position.z +=
-# wpose.position.z +=
-# wpose.position.z +=
-# wpose.position.z +=
-# wpose.position.z +=
-# wpose.position.z +=
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.y += scale * 8  # and sideways (y)
-# wpose.position.z += scale * 0.08  # First move up (z)
+wpose.position.x -= scale * 5  # and sideways (y)
+# wpose.position.x -= scale * 20
+# wpose.position.y -= scale * 20
+waypoints.append(copy.deepcopy(wpose))
+wpose.position.y -= scale * 10
+waypoints.append(copy.deepcopy(wpose))
+wpose.position.x += scale * 10
+waypoints.append(copy.deepcopy(wpose))
+wpose.position.y += scale * 10
+waypoints.append(copy.deepcopy(wpose))
+wpose.position.x -= scale * 5
 waypoints.append(copy.deepcopy(wpose))
 # wpose.position.x += scale * 0.08  # Second move forward/backwards in (x)
 # waypoints.append(copy.deepcopy(wpose))
@@ -94,7 +90,7 @@ display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path
 (plan, fraction) = group_arm.compute_cartesian_path(
                                 waypoints,   # waypoints to follow
                                 0.001,        # eef_step
-                                0.0)         # jump_threshold
+                                10) # 10 is optimum         # jump_threshold
 
 print "fraction :", fraction
 

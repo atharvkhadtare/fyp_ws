@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target mobile_manipulator_arm_moveit_ikfast_plugin[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/mobile_manipulator_arm_moveit_ikfast_plugin.dir/src/mobile_manipulator_arm_ikfast_moveit_plugin.cpp.o[0m
-[100%] [32m[1mLinking CXX shared library /home/avitra/fyp_ws/devel/.private/mobile_manipulator_ikfast_arm_plugin/lib/libmobile_manipulator_arm_moveit_ikfast_plugin.so[0m
-[100%] Built target mobile_manipulator_arm_moveit_ikfast_plugin
