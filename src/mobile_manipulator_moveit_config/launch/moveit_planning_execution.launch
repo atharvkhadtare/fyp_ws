@@ -6,10 +6,11 @@
  # publish the current configuration of the robot (simulated or real)
  # and the current state of the world as seen by the planner
  <include file="$(find mobile_manipulator_moveit_config)/launch/move_group.launch">
-  <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="publish_monitored_planning_scene" value="true" />
  </include>
  # The visualization component of MoveIt!
  <include file="$(find mobile_manipulator_moveit_config)/launch/moveit_rviz.launch">
- <arg name="config" value="true"/>
+    <arg name="config" value="true"/>
  </include>
+
 </launch>

@@ -17,17 +17,17 @@
     </include >
 
     <!-- static_transform_publisher x y z qx qy qz qw frame_id child_frame_id period_in_ms -->
-    <node pkg ="tf" type ="static_transform_publisher" name ="camera_link_tf_broadcaster" args ="0.83 0 0 0 0 0 1 camera_link base_link 100" />
+    <node pkg ="tf" type ="static_transform_publisher" name ="camera_link_tf_broadcaster" args ="0.5 0 -0.2 -1.57 0 0 camera_link base_link 100" />
     
     <!-- In simulation , we are going to need the controller to execute trajectories -->
-    <include file="$(find my_dynamixel_tutorial)/launch/robot_state.launch">
+    <!-- <include file="$(find my_dynamixel_tutorial)/launch/robot_state.launch">
     </include>
-    
+     -->
     <!-- Run the main MoveIt executable -->
-    <include file ="$( find mobile_manipulator_moveit_config )/launch/move_group.launch">
+    <!-- <include file ="$( find mobile_manipulator_moveit_config )/launch/move_group.launch">
       <arg name="publish_monitored_planning_scene" value="true" />
     </include >
-    
+     -->
     <!-- Run Rviz and load the default config to see the state of the move_group node -->
     <include file ="$(find mobile_manipulator_moveit_config)/launch/moveit_rviz.launch">
         <arg name ="config" value ="true"/>

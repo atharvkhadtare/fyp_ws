@@ -18,12 +18,12 @@
     </include >
 
     <!-- static_transform_publisher x y z qx qy qz qw frame_id child_frame_id period_in_ms -->
-    <node pkg ="tf" type ="static_transform_publisher" name ="camera_link_tf_broadcaster" args ="0.83 0 0 0 0 0 1 camera_link shoulder_yaw_motor 100" />
+    <node pkg ="tf" type ="static_transform_publisher" name ="camera_link_tf_broadcaster" args ="0.5 -0.1 -0.3 0 0 -1.57 camera_link shoulder_yaw_motor 100" />
     
     <!-- In simulation , we are going to need the controller to execute trajectories -->
     <node name ="joint_state_publisher" pkg ="joint_state_publisher" type ="joint_state_publisher">
         <param name ="/use_gui " value =" false "/>
-        <rosparam param ="/source_list"> [/move_group /fake_controller_joint_states ] </rosparam >
+        <rosparam param ="/source_list"> [/move_group/fake_controller_joint_states] </rosparam >
     </node>
     
     <!-- Given the published joint states , publish tf for the robot links -->
