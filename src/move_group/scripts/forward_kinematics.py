@@ -8,6 +8,7 @@ import moveit_msgs.msg
 import geometry_msgs.msg
 from math import pi
 from std_msgs.msg import String
+
 from moveit_commander.conversions import pose_to_list
 def change_joint_angles(group, joint_goal):
     # joint_goal = group.get_current_joint_values()
@@ -35,7 +36,10 @@ print "Group_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()
 
 # change_joint_angles(group_arm, [1.2, 0.4, -1.57, 1, 0.3])
-change_joint_angles(group_arm, [0, 0, 0, 0, 0])
+# change_joint_angles(group_arm, [-3.0357, 0, 0, 0, 0])
+# change_joint_angles(group_arm, [3.24426, 0, 0, 0, 0])
+change_joint_angles(group_arm, [0, 0, -1.57, -1.57, -2.47])
+# change_joint_angles(group_arm, [0, -1.973232422, -1.99, -2.36344086, -2.616666666])
 # change_joint_angles(group_arm, [0, 0.57, 0, 0, 0])
 #[0.0, -0.2477628272874607, 0.4472224202239656, 0.3047862245403626, 0.07725225351232594, -0.23323341117218666, 0.9201845589721035]
 print "\nGroup_arm pose\n", group_arm.get_current_pose()

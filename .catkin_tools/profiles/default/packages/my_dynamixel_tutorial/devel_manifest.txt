@@ -1,0 +1,4 @@
+my_dynamixel_tutorial
+/home/avitra/fyp_ws/devel/.private/my_dynamixel_tutorial/lib/pkgconfig/my_dynamixel_tutorial.pc /home/avitra/fyp_ws/devel/lib/pkgconfig/my_dynamixel_tutorial.pc
+/home/avitra/fyp_ws/devel/.private/my_dynamixel_tutorial/share/my_dynamixel_tutorial/cmake/my_dynamixel_tutorialConfig-version.cmake /home/avitra/fyp_ws/devel/share/my_dynamixel_tutorial/cmake/my_dynamixel_tutorialConfig-version.cmake
+/home/avitra/fyp_ws/devel/.private/my_dynamixel_tutorial/share/my_dynamixel_tutorial/cmake/my_dynamixel_tutorialConfig.cmake /home/avitra/fyp_ws/devel/share/my_dynamixel_tutorial/cmake/my_dynamixel_tutorialConfig.cmake
