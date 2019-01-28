@@ -17,7 +17,7 @@
     </include >
 
     <!-- static_transform_publisher x y z qx qy qz qw frame_id child_frame_id period_in_ms -->
-    <node pkg ="tf" type ="static_transform_publisher" name ="camera_link_tf_broadcaster" args ="0.5 0 -0.2 -1.57 0 0 camera_link base_link 100" />
+    <node pkg ="tf" type ="static_transform_publisher" name ="camera_link_tf_broadcaster" args ="0.75 0 -0.11 1.57 0 0 camera_link base_link 100" />
     
     <!-- In simulation , we are going to need the controller to execute trajectories -->
     <!-- <include file="$(find my_dynamixel_tutorial)/launch/robot_state.launch">

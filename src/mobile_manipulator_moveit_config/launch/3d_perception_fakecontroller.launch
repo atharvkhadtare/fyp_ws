@@ -11,11 +11,12 @@
     </include >
 
     <!-- Including openni launch to get camera streams ( really depends on the driver we want to use ) -->
+    <node pkg="moveit_tutorials" type="bag_publisher_maintain_time" name="point_clouds" />
 
-    <include file ="$( find freenect_launch )/launch/freenect.launch">
+    <!-- <include file ="$( find freenect_launch )/launch/freenect.launch">
         <arg name="rgb_frame_id" value="camera_rgb_optical_frame"/>
         <arg name="depth_frame_id" value="camera_depth_optical_frame"/>    
-    </include >
+    </include > -->
 
     <!-- static_transform_publisher x y z qx qy qz qw frame_id child_frame_id period_in_ms -->
     <node pkg ="tf" type ="static_transform_publisher" name ="camera_link_tf_broadcaster" args ="0.5 -0.1 -0.3 0 0 -1.57 camera_link shoulder_yaw_motor 100" />
