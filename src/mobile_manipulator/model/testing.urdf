@@ -218,7 +218,7 @@
       <inertia ixx="0.000050799110" ixy="0.0" ixz="0.0" iyy="0.00002857215" iyz="0.00000051457" izz="0.000043394"/>
     </inertial>
     <visual>
-      <origin rpy="1.57 0 -1.57" xyz="0 0.053 -0.025"/>
+      <origin rpy="0 1.57 3.14" xyz="0 0.021 0.048"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/gripper_Centering.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -238,7 +238,7 @@
       <inertia ixx="0.00001611154" ixy="0.00000001397" ixz="0.0" iyy="0.00000888743" iyz="0.00000015948" izz="0.00001354172"/>
     </inertial>
     <visual>
-      <origin rpy="-1.57 0 1.57" xyz="0 0.053 0"/>
+      <origin rpy="0 0 1.57" xyz="0 -0.041 0.021"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
       </geometry>

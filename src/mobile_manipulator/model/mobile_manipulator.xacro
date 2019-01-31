@@ -293,13 +293,13 @@
 
   <link name="roll_j_plate">
     <xacro:roll_j_plate_Inertial trans="0 0 0" rpy="0 0 0"/>
-    <xacro:roll_j_plate_Visual trans="0 0.053 -0.025" rpy="1.57 0 -1.57"/>
+    <xacro:roll_j_plate_Visual trans="0 0.021 0.048" rpy="0 1.57 3.14"/>
     <xacro:roll_j_plate_Collision trans="0 0 0" rpy="0 0 0"/>
   </link>
 
 <link name="gripper_motor">
     <xacro:AXInertial trans="0.03 0.037 0" rpy="-1.57 3.14 0"/>
-    <xacro:AXVisual trans="0 0.053 0" rpy="0 -1.57 1.57"/>
+    <xacro:AXVisual trans="0 -0.041 0.021" rpy="0 0 1.57"/>
     <xacro:AXCollision trans="0 0.035 0.027" rpy="-1.57 3.14 0"/>
   </link>
 
