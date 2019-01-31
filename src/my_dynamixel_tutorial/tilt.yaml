@@ -62,3 +62,16 @@ wrist_roll_controller:
         init: 512
         min: 0
         max: 1024
+
+gripper_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: gripper_motor
+    joint_speed: 1.75
+    motor:
+        id: 6
+        init: 530
+        min: 548
+        max: 738

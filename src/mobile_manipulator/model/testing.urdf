@@ -9,6 +9,7 @@
   </material>
   <!-- MACROS -->
   <!-- Macros of the J plate -->
+  <!-- Macros of the gripper -->
   <!-- LINKS -->
   <link name="shoulder_yaw_motor">
     <inertial>
@@ -210,7 +211,6 @@
       </geometry>
     </collision>
   </link>
-  <!--trans="0 0.015 0.0585" trans1="0 0.035 0.027" rpy="-1.57 0 0"-->
   <link name="roll_j_plate">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -231,32 +231,26 @@
       </geometry>
     </collision>
   </link>
-  <link name="gripper_motor">
+  <link name="gripper">
     <inertial>
-      <origin rpy="-1.57 3.14 0" xyz="0.03 0.037 0"/>
-      <mass value="0.05573"/>
-      <inertia ixx="0.00001611154" ixy="0.00000001397" ixz="0.0" iyy="0.00000888743" iyz="0.00000015948" izz="0.00001354172"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.140"/>
+      <inertia ixx="0.000050799110" ixy="0.0" ixz="0.0" iyy="0.00002857215" iyz="0.00000051457" izz="0.000043394"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 1.57" xyz="0 -0.041 0.021"/>
+      <origin rpy="0 0 1.57" xyz="-0.069 -0.016 0.004"/>
       <geometry>
-        <mesh filename="package://mobile_manipulator/meshes/AX-12_18A - dynamixel_AXseries-1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://mobile_manipulator/meshes/gripper.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="-1.57 3.14 0" xyz="0 0.035 0.027"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.032 0.04 0.05"/>
+        <mesh filename="package://mobile_manipulator/meshes/gripper.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <!-- <link name="end_effector">
-    <xacro:F10Inertial trans="0 0.040 -0.016" rpy="1.57 1.57 1.57"/>
-    <xacro:F10Visual trans="0 0.005 -0.016" rpy="1.57 1.57 1.57"/>
-    <xacro:F10Collision trans="0 0.040 -0.016" rpy="1.57 1.57 1.57"/>
-  </link> -->
-  <!-- trans="0 0.015 0" rpy="1.57 0 1.57" -->
   <joint name="shoulder_yaw" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.025"/>
     <parent link="shoulder_yaw_motor"/>
@@ -305,7 +299,6 @@
     <parent link="wrist_pitch_motor"/>
     <child link="wrist_roll_motor"/>
   </joint>
-  <!-- <xacro:Revjoint id="wrist_roll" trans="0 0 0.078" rpy="0 0 -1.57" parent="wrist_roll_motor" child="gripper_motor" axis="0 1 0" l="-3.14" u="+3.14" v="1.0"/> -->
   <joint name="wrist_roll" type="revolute">
     <origin rpy="0 0 -1.57" xyz="0 0.02 0.082"/>
     <parent link="wrist_roll_motor"/>
@@ -313,9 +306,8 @@
     <axis xyz="1 0 0"/>
     <limit effort="30" lower="-3.14" upper="+3.14" velocity="1.0"/>
   </joint>
-  <joint name="end_effector" type="fixed">
+  <joint name="roll_plate_gripper" type="fixed">
     <parent link="roll_j_plate"/>
-    <child link="gripper_motor"/>
+    <child link="gripper"/>
   </joint>
-  <!-- <xacro:FxdJoint id="roll_plate" parent="gripper_motor" child="" />  -->
 </robot>
