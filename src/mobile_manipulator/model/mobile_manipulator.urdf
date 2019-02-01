@@ -304,7 +304,7 @@
     <parent link="wrist_roll_motor"/>
     <child link="roll_j_plate"/>
     <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-3.14" upper="+3.14" velocity="1.0"/>
+    <limit effort="30" lower="-2" upper="+2" velocity="1.0"/>
   </joint>
   <joint name="roll_plate_gripper" type="fixed">
     <parent link="roll_j_plate"/>

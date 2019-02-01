@@ -5,8 +5,8 @@
   <description>
      An automatically generated package with all the configuration and launch files for using the mobile_manipulator with the MoveIt! Motion Planning Framework
   </description>
-  <author email="atharva860@gmail.com">atharv</author>
-  <maintainer email="atharva860@gmail.com">atharv</maintainer>
+  <author email="majorviraj@gmail.com">Viraj Sonawane</author>
+  <maintainer email="majorviraj@gmail.com">Viraj Sonawane</maintainer>
 
   <license>BSD</license>
 

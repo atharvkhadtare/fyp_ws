@@ -1,6 +1,3 @@
 Symlinking /home/avitra/fyp_ws/devel/lib/pkgconfig/mobile_manipulator_ikfast_arm_plugin.pc
 Symlinking /home/avitra/fyp_ws/devel/share/mobile_manipulator_ikfast_arm_plugin/cmake/mobile_manipulator_ikfast_arm_pluginConfig-version.cmake
 Symlinking /home/avitra/fyp_ws/devel/share/mobile_manipulator_ikfast_arm_plugin/cmake/mobile_manipulator_ikfast_arm_pluginConfig.cmake
-Cleaning: (/home/avitra/fyp_ws/devel/.private/mobile_manipulator_ikfast_arm_plugin/lib/libmobile_manipulator_arm_moveit_ikfast_plugin.so, /home/avitra/fyp_ws/devel/lib/libmobile_manipulator_arm_moveit_ikfast_plugin.so)
-Unlinking: /home/avitra/fyp_ws/devel/lib/libmobile_manipulator_arm_moveit_ikfast_plugin.so
-Already unlinked: {}

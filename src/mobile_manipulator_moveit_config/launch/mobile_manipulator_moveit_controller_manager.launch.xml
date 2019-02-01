@@ -10,5 +10,4 @@
 	<!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(find mobile_manipulator_moveit_config)/config/controllers.yaml"/>
 
-
 </launch>
