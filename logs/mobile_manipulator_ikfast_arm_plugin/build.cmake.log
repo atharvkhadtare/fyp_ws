@@ -36,6 +36,13 @@ Not searching for unused variables given on the command line.
 [36m--[0m Found gtest sources under '/usr/src/gmock': gtests will be built
 [36m--[0m Using Python nosetests: /usr/bin/nosetests-2.7
 [36m--[0m catkin 0.7.14
+[36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[36m--[0m Looking for sgemm_
+[36m--[0m Looking for sgemm_ - found
+[36m--[0m A library with BLAS API found.
+[36m--[0m Looking for cheev_
+[36m--[0m Looking for cheev_ - found
+[36m--[0m A library with LAPACK API found.
 [36m--[0m Configuring done
 [36m--[0m Generating done
 [36m--[0m Build files have been written to: /home/avitra/fyp_ws/build/mobile_manipulator_ikfast_arm_plugin
