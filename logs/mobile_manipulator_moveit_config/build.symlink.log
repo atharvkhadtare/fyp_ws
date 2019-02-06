@@ -1,3 +1,3 @@
-Symlinking /home/avitra/fyp_ws/devel/lib/pkgconfig/mobile_manipulator_moveit_config.pc
-Symlinking /home/avitra/fyp_ws/devel/share/mobile_manipulator_moveit_config/cmake/mobile_manipulator_moveit_configConfig-version.cmake
-Symlinking /home/avitra/fyp_ws/devel/share/mobile_manipulator_moveit_config/cmake/mobile_manipulator_moveit_configConfig.cmake
+Linked: (/home/avitra/fyp_ws/devel/.private/mobile_manipulator_moveit_config/lib/pkgconfig/mobile_manipulator_moveit_config.pc, /home/avitra/fyp_ws/devel/lib/pkgconfig/mobile_manipulator_moveit_config.pc)
+Linked: (/home/avitra/fyp_ws/devel/.private/mobile_manipulator_moveit_config/share/mobile_manipulator_moveit_config/cmake/mobile_manipulator_moveit_configConfig-version.cmake, /home/avitra/fyp_ws/devel/share/mobile_manipulator_moveit_config/cmake/mobile_manipulator_moveit_configConfig-version.cmake)
+Linked: (/home/avitra/fyp_ws/devel/.private/mobile_manipulator_moveit_config/share/mobile_manipulator_moveit_config/cmake/mobile_manipulator_moveit_configConfig.cmake, /home/avitra/fyp_ws/devel/share/mobile_manipulator_moveit_config/cmake/mobile_manipulator_moveit_configConfig.cmake)

@@ -56,7 +56,7 @@ planning_frame = group_arm.get_planning_frame()
 
 
 waypoints = []
-scale = 0.01*0.75
+scale = 0.01
 wpose = group_arm.get_current_pose().pose
 waypoints.append(copy.deepcopy(wpose))
 
@@ -66,21 +66,21 @@ waypoints.append(copy.deepcopy(wpose))
 # ientation.z = 0.0
 # wpose.orientation.w = 0.0
 
-wpose.position.z -= scale * 10  # and sideways (y)
-# wpose.position.x -= scale * 20
-# wpose.position.y -= scale * 20
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.y -= scale * 10
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.x += scale * 10
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.y += scale * 10
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.x -= scale * 5
+# wpose.position.z -= scale * 10  # and sideways (y)
+wpose.position.x -= scale * 10
+wpose.position.y -= scale * 10
 waypoints.append(copy.deepcopy(wpose))
-# wpose.position.x += scale * 0.08  # Second move forward/backwards in (x)
+wpose.position.y += scale * 10
+waypoints.append(copy.deepcopy(wpose))
+wpose.position.x += scale * 10
+waypoints.append(copy.deepcopy(wpose))
+wpose.position.y += scale * 10
+waypoints.append(copy.deepcopy(wpose))
+# wpose.position.x -= scale * 5
 # waypoints.append(copy.deepcopy(wpose))
-# wpose.position.z -= scale * 0.08  # Third move sideways (y)
+# wpose.position.x += scale * 8  # Second move forward/backwards in (x)
+# waypoints.append(copy.deepcopy(wpose))
+# wpose.position.z -= scale * 8  # Third move sideways (y)
 # waypoints.append(copy.deepcopy(wpose))
 
 print waypoints

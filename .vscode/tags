@@ -1,0 +1,79 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CATKIN_MARKER_FILE	../devel/_setup_util.py	/^CATKIN_MARKER_FILE = '.catkin'$/;"	kind:variable	line:46
+CMAKE_PREFIX_PATH	../devel/_setup_util.py	/^        CMAKE_PREFIX_PATH = '\/home\/avitra\/fyp_ws\/devel;\/opt\/ros\/kinetic'.split(';')$/;"	kind:variable	line:265
+CMAKE_PREFIX_PATH	../devel/_setup_util.py	/^        CMAKE_PREFIX_PATH = os.pathsep.join(CMAKE_PREFIX_PATH)$/;"	kind:variable	line:270
+ENV_VAR_SUBFOLDERS	../devel/_setup_util.py	/^ENV_VAR_SUBFOLDERS = {$/;"	kind:variable	line:53
+IS_DARWIN	../devel/_setup_util.py	/^IS_DARWIN = (system == 'Darwin')$/;"	kind:variable	line:49
+IS_WINDOWS	../devel/_setup_util.py	/^IS_WINDOWS = (system == 'Windows')$/;"	kind:variable	line:50
+Joint	../src/my_dynamixel_tutorial/scripts/trajectory_client.py	/^class Joint:$/;"	kind:class	line:15
+__init__	../src/my_dynamixel_tutorial/scripts/trajectory_client.py	/^        def __init__(self, motor_name):$/;"	kind:member	line:16
+_get_workspaces	../devel/_setup_util.py	/^def _get_workspaces(environ, include_fuerte=False, include_non_existing=False):$/;"	kind:function	line:114
+_parse_arguments	../devel/_setup_util.py	/^def _parse_arguments(args=None):$/;"	kind:function	line:250
+_prefix_env_variable	../devel/_setup_util.py	/^def _prefix_env_variable(environ, name, paths, subfolders):$/;"	kind:function	line:149
+_rollback_env_variable	../devel/_setup_util.py	/^def _rollback_env_variable(environ, name, subfolders):$/;"	kind:function	line:83
+_setup_util.py	../devel/_setup_util.py	1;"	kind:file	line:1
+add_collision_object.py	../src/my_dynamixel_tutorial/scripts/add_collision_object.py	1;"	kind:file	line:1
+anonymous	../src/move_group/src/move_group.py	/^                anonymous=True)$/;"	kind:variable	line:15
+args	../devel/_setup_util.py	/^            args = _parse_arguments()$/;"	kind:variable	line:259
+assignment	../devel/_setup_util.py	/^def assignment(key, value):$/;"	kind:function	line:175
+base_path	../devel/_setup_util.py	/^        base_path = os.path.dirname(__file__)$/;"	kind:variable	line:267
+change_end_pose	../src/move_group/src/inverse_kinematics.py	/^def change_end_pose(group, input_pose):$/;"	kind:function	line:12
+change_joint_angles	../src/move_group/src/forward_kinematics.py	/^def change_joint_angles(group, joint_goal):$/;"	kind:function	line:12
+comment	../devel/_setup_util.py	/^def comment(msg):$/;"	kind:function	line:182
+display_trajectory_publisher	../src/move_group/src/forward_kinematics.py	/^display_trajectory_publisher = rospy.Publisher('\/move_group\/display_planned_path',$/;"	kind:variable	line:23
+display_trajectory_publisher	../src/move_group/src/inverse_kinematics.py	/^display_trajectory_publisher = rospy.Publisher('\/move_group\/display_planned_path',$/;"	kind:variable	line:36
+display_trajectory_publisher	../src/move_group/src/move_group.py	/^display_trajectory_publisher = rospy.Publisher('\/move_group\/display_planned_path',$/;"	kind:variable	line:24
+eef_link	../src/move_group/src/forward_kinematics.py	/^eef_link = group_arm.get_end_effector_link()$/;"	kind:variable	line:28
+eef_link	../src/move_group/src/inverse_kinematics.py	/^eef_link = group_arm.get_end_effector_link()$/;"	kind:variable	line:42
+eef_link	../src/move_group/src/move_group.py	/^eef_link = group_arm.get_end_effector_link()$/;"	kind:variable	line:33
+environ	../devel/_setup_util.py	/^        environ = dict(os.environ)$/;"	kind:variable	line:272
+find_env_hooks	../devel/_setup_util.py	/^def find_env_hooks(environ, cmake_prefix_path):$/;"	kind:function	line:198
+forward_kinematics.py	../src/move_group/src/forward_kinematics.py	1;"	kind:file	line:1
+group_arm	../src/move_group/src/forward_kinematics.py	/^group_arm = moveit_commander.MoveGroupCommander("arm")$/;"	kind:variable	line:22
+group_arm	../src/move_group/src/inverse_kinematics.py	/^group_arm = moveit_commander.MoveGroupCommander("arm")$/;"	kind:variable	line:33
+group_arm	../src/move_group/src/move_group.py	/^group_arm = moveit_commander.MoveGroupCommander(group_name)$/;"	kind:variable	line:22
+group_name	../src/move_group/src/move_group.py	/^group_name = "arm"$/;"	kind:variable	line:21
+group_names	../src/move_group/src/forward_kinematics.py	/^group_names = robot.get_group_names()$/;"	kind:variable	line:30
+group_names	../src/move_group/src/inverse_kinematics.py	/^group_names = robot.get_group_names()$/;"	kind:variable	line:44
+group_names	../src/move_group/src/move_group.py	/^group_names = robot.get_group_names()$/;"	kind:variable	line:37
+home	../src/move_group/src/inverse_kinematics.py	/^home = [0.000119154778374, 0.0258920968167, 0.515676649148, -0.005011902123, -0.00127171250972, -0.250399255128, 0.968128853312]$/;"	kind:variable	line:27
+inverse_kinematics.py	../src/move_group/src/inverse_kinematics.py	1;"	kind:file	line:1
+joints	../src/my_dynamixel_tutorial/scripts/state_publisher.py	/^joints = ["shoulder_yaw", "shoulder_pitch", "elbow", "wrist_pitch", "wrist_roll"]$/;"	kind:variable	line:14
+joints	../src/my_dynamixel_tutorial/scripts/trajectory_client.py	/^joints = ["shoulder_yaw", "shoulder_pitch", "elbow", "wrist_pitch", "wrist_roll"]$/;"	kind:variable	line:13
+lines	../devel/_setup_util.py	/^        lines = []$/;"	kind:variable	line:273
+main	../src/my_dynamixel_tutorial/scripts/trajectory_client.py	/^def main():$/;"	kind:function	line:34
+move_group.py	../src/move_group/src/move_group.py	1;"	kind:file	line:1
+move_joint	../src/my_dynamixel_tutorial/scripts/trajectory_client.py	/^        def move_joint(self, points):$/;"	kind:member	line:24
+offset	../src/my_dynamixel_tutorial/scripts/state_publisher.py	/^offset = [1980, 2000, 2222, 512, 512]$/;"	kind:variable	line:22
+p	../src/my_dynamixel_tutorial/scripts/add_collision_object.py	/^p = PoseStamped()$/;"	kind:variable	line:26
+planning_frame	../src/move_group/src/forward_kinematics.py	/^planning_frame = group_arm.get_planning_frame()$/;"	kind:variable	line:26
+planning_frame	../src/move_group/src/inverse_kinematics.py	/^planning_frame = group_arm.get_planning_frame()$/;"	kind:variable	line:39
+planning_frame	../src/move_group/src/move_group.py	/^planning_frame = group_arm.get_planning_frame()$/;"	kind:variable	line:29
+pose_goal	../src/move_group/src/move_group.py	/^pose_goal = geometry_msgs.msg.Pose()$/;"	kind:variable	line:53
+prepend	../devel/_setup_util.py	/^def prepend(environ, key, prefix):$/;"	kind:function	line:189
+prepend_env_variables	../devel/_setup_util.py	/^def prepend_env_variables(environ, env_var_subfolders, workspaces):$/;"	kind:function	line:129
+process	../src/my_dynamixel_tutorial/scripts/state_publisher.py	/^def process(msg):$/;"	kind:function	line:30
+pub	../src/my_dynamixel_tutorial/scripts/state_publisher.py	/^pub = rospy.Publisher('\/robot\/joint_states',JointState,queue_size=10)$/;"	kind:variable	line:49
+queue_size	../src/move_group/src/inverse_kinematics.py	/^                                               queue_size=20)$/;"	kind:variable	line:38
+queue_size	../src/move_group/src/move_group.py	/^                                               queue_size=20)$/;"	kind:variable	line:26
+remove_collision_object.py	../src/my_dynamixel_tutorial/scripts/remove_collision_object.py	1;"	kind:file	line:1
+robot	../src/move_group/src/forward_kinematics.py	/^robot = moveit_commander.RobotCommander()$/;"	kind:variable	line:20
+robot	../src/move_group/src/inverse_kinematics.py	/^robot = moveit_commander.RobotCommander()$/;"	kind:variable	line:31
+robot	../src/move_group/src/move_group.py	/^robot = moveit_commander.RobotCommander()$/;"	kind:variable	line:17
+robot	../src/my_dynamixel_tutorial/scripts/add_collision_object.py	/^robot = moveit_commander.RobotCommander()$/;"	kind:variable	line:22
+robot	../src/my_dynamixel_tutorial/scripts/remove_collision_object.py	/^robot = moveit_commander.RobotCommander()$/;"	kind:variable	line:22
+rollback_env_variables	../devel/_setup_util.py	/^def rollback_env_variables(environ, env_var_subfolders):$/;"	kind:function	line:62
+scene	../src/move_group/src/forward_kinematics.py	/^scene = moveit_commander.PlanningSceneInterface()$/;"	kind:variable	line:21
+scene	../src/move_group/src/inverse_kinematics.py	/^scene = moveit_commander.PlanningSceneInterface()$/;"	kind:variable	line:32
+scene	../src/move_group/src/move_group.py	/^scene = moveit_commander.PlanningSceneInterface()$/;"	kind:variable	line:19
+scene	../src/my_dynamixel_tutorial/scripts/add_collision_object.py	/^scene = moveit_commander.PlanningSceneInterface()$/;"	kind:variable	line:21
+scene	../src/my_dynamixel_tutorial/scripts/remove_collision_object.py	/^scene = moveit_commander.PlanningSceneInterface()$/;"	kind:variable	line:21
+state_publisher.py	../src/my_dynamixel_tutorial/scripts/state_publisher.py	1;"	kind:file	line:1
+sub	../src/my_dynamixel_tutorial/scripts/state_publisher.py	/^sub = rospy.Subscriber('\/motor_states\/pan_tilt_port',MotorStateList,process)$/;"	kind:variable	line:47
+system	../devel/_setup_util.py	/^system = platform.system()$/;"	kind:variable	line:48
+trajectory_client.py	../src/my_dynamixel_tutorial/scripts/trajectory_client.py	1;"	kind:file	line:1

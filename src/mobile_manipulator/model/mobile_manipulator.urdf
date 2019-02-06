@@ -218,14 +218,14 @@
       <inertia ixx="0.000050799110" ixy="0.0" ixz="0.0" iyy="0.00002857215" iyz="0.00000051457" izz="0.000043394"/>
     </inertial>
     <visual>
-      <origin rpy="0 1.57 3.14" xyz="0 0.021 0.048"/>
+      <origin rpy="-1.57 -1.57 0" xyz="-0.025 0 -0.052"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/gripper_Centering.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 1.57 3.14" xyz="0 0.021 0.048"/>
+      <origin rpy="-1.57 -1.57 0" xyz="-0.025 0 -0.052"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/gripper_Centering.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -238,14 +238,14 @@
       <inertia ixx="0.000050799110" ixy="0.0" ixz="0.0" iyy="0.00002857215" iyz="0.00000051457" izz="0.000043394"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 1.57" xyz="-0.069 -0.016 0.004"/>
+      <origin rpy="0 3.14 0" xyz="0.008 0.07 -0.009"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/gripper.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 1.57" xyz="-0.069 -0.016 0.004"/>
+      <origin rpy="0 3.14 0" xyz="0.008 0.07 -0.009"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/gripper.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -300,10 +300,10 @@
     <child link="wrist_roll_motor"/>
   </joint>
   <joint name="wrist_roll" type="revolute">
-    <origin rpy="0 0 -1.57" xyz="0 0.02 0.082"/>
+    <origin rpy="0 3.14 0" xyz="0 0.02 0.082"/>
     <parent link="wrist_roll_motor"/>
     <child link="roll_j_plate"/>
-    <axis xyz="1 0 0"/>
+    <axis xyz="0 1 0"/>
     <limit effort="30" lower="-2" upper="+2" velocity="1.0"/>
   </joint>
   <joint name="roll_plate_gripper" type="fixed">
