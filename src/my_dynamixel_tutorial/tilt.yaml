@@ -18,11 +18,13 @@ shoulder_pitch_controller:
         type: JointPositionController
     joint_name: shoulder_pitch
     joint_speed: 1.75
-    motor:
+    motor_master:
         id: 2
         init: 2000
         min: 713
         max: 3250
+    motor_slave:
+        id: 7
 
 elbow_controller:
     controller:

@@ -53,13 +53,13 @@ print "Robot Groups:", robot.get_group_names(), "\n============"
 print "Group_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()
 
-end_effector_coordinate = [0.0, 0.18, 0.15]
+end_effector_coordinate = [0.0, 0.03, 0.3288]
 # end_effector_coordinate = [0.1, 0.197971252863, 0.157264105097]
-end_effector_orientatation = [-3.14, 1.57, 0] #in euler
+end_effector_orientatation = [-3, 0, 3.14] #in euler
 # end_effector_orientatation = [None, None, None] #in euler
 quaternion = tf.transformations.quaternion_from_euler(end_effector_orientatation[0],end_effector_orientatation[1],end_effector_orientatation[2])
 end_effector_coordinate.extend(quaternion)
-end_effector_coordinate = [0.000568104599418, 0.185172728856, 0.166854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623]
+# end_effector_coordinate = [0.000568104599418, 0.185172728856, 0.166854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623]
 # change_end_pose(group_arm, [0.0, None, 0.5196, 0.0, 0.0, None, 1.0])
 # change_end_pose(group_arm, [0, 0, 0, 0, 0, 0, 1.0])
 # change_end_pose(group_arm, [0, -0.4559887551713903, 0.07897818182406445, 0.706845410317391, 0, 0, 0.707368055252284])
@@ -69,8 +69,9 @@ end_effector_coordinate = [0.000568104599418, 0.185172728856, 0.166854905361, -0
 # change_end_pose(group_arm, [0.20, 0.20, 0.20, 0.707, 0.707, 0, 0.707])
 print "quat:", quaternion
 print "array:", end_effector_coordinate
-# change_end_pose(group_arm, group_arm.get_current_pose().pose)
-change_end_pose(group_arm, [0.000568104599418, 0.185172728856, 0.366854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623])
+
+change_end_pose(group_arm, end_effector_coordinate)
+# change_end_pose(group_arm, [0.000568104599418, 0.185172728856, 0.366854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623])
 # change_end_pose(group_arm, [0.010568104599418, 0.185172728856, 0.166854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623])
 # change_end_pose(group_arm, [0.020568104599418, 0.185172728856, 0.166854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623])
 # change_end_pose(group_arm, [0.030568104599418, 0.185172728856, 0.166854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623])

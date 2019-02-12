@@ -52,11 +52,18 @@
         <joint name="wrist_roll" value="0" />
     </group_state>
     <group_state name="pre_grasp" group="arm">
-        <joint name="elbow" value="-0.1398" />
-        <joint name="shoulder_pitch" value="-1.1824" />
+        <joint name="elbow" value="-1.7941" />
+        <joint name="shoulder_pitch" value="0.1426" />
         <joint name="shoulder_yaw" value="-1.5175" />
-        <joint name="wrist_pitch" value="-0.2314" />
+        <joint name="wrist_pitch" value="0.0805" />
         <joint name="wrist_roll" value="0" />
+    </group_state>
+    <group_state name="pre_drop" group="arm">
+        <joint name="elbow" value="-1.707" />
+        <joint name="shoulder_pitch" value="0.164" />
+        <joint name="shoulder_yaw" value="0.0697" />
+        <joint name="wrist_pitch" value="-0.1014" />
+        <joint name="wrist_roll" value="1.4725" />
     </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_to_base" type="fixed" parent_frame="world" child_link="shoulder_yaw_motor" />

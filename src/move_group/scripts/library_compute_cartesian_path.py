@@ -67,15 +67,15 @@ waypoints.append(copy.deepcopy(wpose))
 # wpose.orientation.w = 0.0
 
 # wpose.position.z -= scale * 10  # and sideways (y)
-wpose.position.x -= scale * 10
-wpose.position.y -= scale * 10
+wpose.position.x -= scale * 5
+# wpose.position.y -= scale * 6
 waypoints.append(copy.deepcopy(wpose))
-wpose.position.y += scale * 10
+wpose.position.y -= scale * 25
 waypoints.append(copy.deepcopy(wpose))
-wpose.position.x += scale * 10
+wpose.position.x -= scale * 25
 waypoints.append(copy.deepcopy(wpose))
-wpose.position.y += scale * 10
-waypoints.append(copy.deepcopy(wpose))
+# wpose.position.y += scale * 10
+# waypoints.append(copy.deepcopy(wpose))
 # wpose.position.x -= scale * 5
 # waypoints.append(copy.deepcopy(wpose))
 # wpose.position.x += scale * 8  # Second move forward/backwards in (x)
@@ -90,7 +90,7 @@ display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path
 (plan, fraction) = group_arm.compute_cartesian_path(
                                 waypoints,   # waypoints to follow
                                 0.001,        # eef_step
-                                10) # 10 is optimum         # jump_threshold
+                                5) # 10 is optimum         # jump_threshold
 
 print "fraction :", fraction
 
@@ -101,7 +101,7 @@ print "fraction :", fraction
 # display_trajectory_publisher.publish(display_trajectory)
 
 
-print plan
+# print plan
 group_arm.execute(plan, wait=True)
 # print "quat:", quaternion
 # print "array:", end_effector_coordinate
