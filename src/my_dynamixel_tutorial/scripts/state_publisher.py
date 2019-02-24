@@ -33,13 +33,15 @@ def process(msg):
 	joint_states.header.stamp = rospy.Time.now()
 
 	for x in msg.motor_states:
-		joint_states.name.append(joints[x.id-1])
+		if (x.id < 6) :
+			joint_states.name.append(joints[x.id-1])
 
-		if((x.id < 4)):
-			joint_states.position.append((x.position - offset[x.id-1])*(360.0/4096)*(pi/180))
-		else:
-			joint_states.position.append((x.position - offset[x.id-1])*(300.0/1023)*(pi/180))
-		#joint_states.velocity.append(x.velocity)
+			if((x.id < 4)):
+				joint_states.position.append((x.position - offset[x.id-1])*(360.0/4096)*(pi/180))
+			else:
+				joint_states.position.append((x.position - offset[x.id-1])*(300.0/1023)*(pi/180))
+		
+			#joint_states.velocity.append(x.velocity)
 	
 	pub.publish(joint_states)
 
