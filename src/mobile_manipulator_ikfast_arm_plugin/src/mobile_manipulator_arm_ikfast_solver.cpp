@@ -12,7 +12,7 @@
 /// See the License for the specific language governing permissions and
 /// limitations under the License.
 ///
-/// ikfast version 0x10000049 generated on 2019-02-13 14:17:51.744089
+/// ikfast version 0x10000049 generated on 2019-02-26 19:34:06.923661
 /// To compile with gcc:
 ///     gcc -lstdc++ ik.cpp
 /// To compile without any main function as a shared object (might need -llapack):
@@ -335,8 +335,8 @@ eetrans[0]=(((x6*((((x18*x25))+((x18*x24))))))+((x0*x20))+((x19*x24))+((x19*x25)
 IkReal x33=((1.0)*x17);
 IkReal x34=((1.0)*x10);
 IkReal x35=((1.0)*x14);
-eetrans[1]=(((x5*(((((-1.0)*x24*x34))+(((-1.0)*x25*x34))))))+((x6*(((((-1.0)*x24*x33))+(((-1.0)*x25*x33))))))+((x6*(((((-1.0)*x23*x34))+((x10*x22))))))+((x5*(((((-1.0)*x22*x33))+((x17*x23))))))+(((-1.0)*x24*x35))+(((-1.0)*x20*x7))+(((-1.0)*x25*x35)));
-eetrans[2]=((0.06)+((x6*(((((0.02)*x23))+(((-0.02)*x22))))))+(((0.186)*x3))+(((-0.202)*x22))+((x5*(((((0.082)*x23))+(((-0.082)*x22))))))+((x6*(((((-0.082)*x24))+(((-0.082)*x25))))))+(((0.202)*x23))+((x5*(((((0.02)*x25))+(((0.02)*x24)))))));
+eetrans[1]=((0.188)+((x5*(((((-1.0)*x24*x34))+(((-1.0)*x25*x34))))))+((x6*(((((-1.0)*x24*x33))+(((-1.0)*x25*x33))))))+((x6*(((((-1.0)*x23*x34))+((x10*x22))))))+((x5*(((((-1.0)*x22*x33))+((x17*x23))))))+(((-1.0)*x24*x35))+(((-1.0)*x20*x7))+(((-1.0)*x25*x35)));
+eetrans[2]=((0.2927)+((x6*(((((0.02)*x23))+(((-0.02)*x22))))))+(((0.186)*x3))+(((-0.202)*x22))+((x5*(((((0.082)*x23))+(((-0.082)*x22))))))+((x6*(((((-0.082)*x24))+(((-0.082)*x25))))))+(((0.202)*x23))+((x5*(((((0.02)*x25))+(((0.02)*x24)))))));
 eerot[0]=((((-1.0)*x12*x7))+((x21*x31))+((x15*x31))+((x11*x7)));
 eerot[1]=(((x0*x11))+(((-1.0)*x0*x12))+((x21*x30))+((x15*x30)));
 eerot[2]=(((x8*(((((0.999998735952397)*x28))+(((0.999998735952397)*x29))))))+((x9*(((((0.00158999799016431)*x29))+(((0.00158999799016431)*x28)))))));
@@ -370,9 +370,9 @@ px = eetrans[0]; py = eetrans[1]; pz = eetrans[2];
 new_r00=r00;
 new_px=px;
 new_r01=r01;
-new_py=py;
+new_py=((-0.188)+py);
 new_r02=r02;
-new_pz=((-0.06)+pz);
+new_pz=((-0.2927)+pz);
 r00 = new_r00; r01 = new_r01; r02 = new_r02; px = new_px; py = new_py; pz = new_pz;
 
 pp=((px*px)+(py*py)+(pz*pz));
@@ -1065,7 +1065,7 @@ IKSolver solver;
 return solver.ComputeIk(eetrans,eerot,pfree,solutions);
 }
 
-IKFAST_API const char* GetKinematicsHash() { return "<robot:GenericRobot - mobile_manipulator (d8ebfa1b08d5c408849a626e82ff5b84)>"; }
+IKFAST_API const char* GetKinematicsHash() { return "<robot:GenericRobot - mobile_manipulator (52c52633f8b2ef1a0478b0d5712a373f)>"; }
 
 IKFAST_API const char* GetIkFastVersion() { return "0x10000049"; }
 
