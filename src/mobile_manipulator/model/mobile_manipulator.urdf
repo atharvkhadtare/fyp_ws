@@ -271,9 +271,6 @@
       </geometry>
     </collision>
   </link>
-  <!-- JOINTS -->
-  3
-  
   <joint name="bot_joint" type="fixed">
     <parent link="bot"/>
     <child link="shoulder_yaw_motor"/>

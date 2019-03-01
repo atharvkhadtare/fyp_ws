@@ -39,6 +39,7 @@ def close_gripper():
     print "close_gripper END"
     print "angle ", angle,
     print " current_load ", current_load
+    exit()
 
 if __name__ == '__main__':
     try:

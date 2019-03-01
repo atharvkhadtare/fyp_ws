@@ -71,6 +71,20 @@ print "quat:", quaternion
 print "array:", end_effector_coordinate
 
 change_end_pose(group_arm, end_effector_coordinate)
+
+
+print "\nGroup_arm pose\n", group_arm.get_current_pose()
+print "Joint Angles\n", group_arm.get_current_joint_values()
+# print "get_goal_joint_tolerance\n", group_arm.get_goal_joint_tolerance()
+# print "get_goal_position_tolerance\n", group_arm.get_goal_position_tolerance()
+# print "get_goal_orientation_tolerancees\n", group_arm.get_goal_orientation_tolerance()
+
+
+
+
+
+
+#archived comments
 # change_end_pose(group_arm, [0.000568104599418, 0.185172728856, 0.366854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623])
 # change_end_pose(group_arm, [0.010568104599418, 0.185172728856, 0.166854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623])
 # change_end_pose(group_arm, [0.020568104599418, 0.185172728856, 0.166854905361, -0.999938911634, -0.00102509074687, 0, 0.0110054604623])
@@ -87,9 +101,3 @@ change_end_pose(group_arm, end_effector_coordinate)
 # change_end_pose(group_arm, [0.0, -0.2477628272874607, 0.4472224202239656, 0.3047862245403626, 0.07725225351232594, -0.23323341117218666, 0.9201845589721035])
 # change_end_pose(group_arm, [0.127, 0.0, None, None, -0.037, 0.679, 0.729])
 # change_end_pose(group_arm, [0.07, 0.9, 0.383, -0.076, -0.037, 0.679, 0.729])
-
-print "\nGroup_arm pose\n", group_arm.get_current_pose()
-print "Joint Angles\n", group_arm.get_current_joint_values()
-# print "get_goal_joint_tolerance\n", group_arm.get_goal_joint_tolerance()
-# print "get_goal_position_tolerance\n", group_arm.get_goal_position_tolerance()
-# print "get_goal_orientation_tolerancees\n", group_arm.get_goal_orientation_tolerance()
