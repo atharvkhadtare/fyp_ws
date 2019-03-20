@@ -300,8 +300,8 @@
  
   <link name="shoulder_yaw_motor">
     <xacro:MXInertial trans="0 0 0" rpy="0 0 0 "/>  
-    <xacro:MXVisual trans="0 0.188 0.2349" rpy="0 0 0 "/>
-    <xacro:MXCollision trans="0 0.188 0.2349" rpy="0 0 0"/>
+    <xacro:MXVisual trans="0 0 -0.027" rpy="0 0 0 "/>
+    <xacro:MXCollision trans="0 0 -0.027" rpy="0 0 0"/>
   </link>
 
   <link name="shoulder_bracket">
@@ -313,7 +313,7 @@
   <link name="shoulder_pitch_motor">
     <xacro:MXInertial trans="0 0 0" rpy="1.57 -3.14 1.57"/>  
     <xacro:MXVisual trans="0 0 0" rpy="1.57 -3.14 1.57"/>
-    <xacro:MXCollision_dual_motor trans="0 0 0" rpy="1.57 -3.14 1.57"/>
+    <xacro:MXCollision trans="0 0 0" rpy="1.57 -3.14 1.57"/>
   </link>
 
   <link name="biscep">
@@ -363,9 +363,9 @@
 
 
   <link name="wrist_yaw_motor">
-    <xacro:AXInertial trans="0 0 0.058" rpy="0 3.14 0"/>
+    <xacro:AXInertial trans="0 0.018 0.058" rpy="0 3.14 0"/>
     <xacro:AXVisual trans="0 0.018 0.058" rpy="0 3.14 0"/>
-    <xacro:AXCollision trans="0 0 0.058" rpy="-1.57 3.14 0"/>
+    <xacro:AXCollision trans="0 0.018 0.058" rpy="0 3.14 0"/>
   </link>
 
 
@@ -384,7 +384,7 @@
  <link name="gripper">
     <xacro:gripper_Inertial trans="0 0 0" rpy="0 0 0"/>
     <xacro:gripper_Visual trans="-0.019 0.092 0.002" rpy="0 0 0"/>
-    <xacro:gripper_Collision trans="0.008 0.07 -0.009" rpy="0 3.14 0"/>
+    <xacro:gripper_Collision trans="-0.019 0.092 0.002" rpy="0 0 0"/>
   </link>
   
     

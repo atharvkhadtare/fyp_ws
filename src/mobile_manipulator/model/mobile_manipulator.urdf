@@ -23,14 +23,14 @@
       <inertia ixx="0.000050799110" ixy="0.0" ixz="0.0" iyy="0.00002857215" iyz="0.00000051457" izz="0.000043394"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0 " xyz="0 0.188 0.2349"/>
+      <origin rpy="0 0 0 " xyz="0 0 -0.027"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/dynamixel_x64series.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0.188 0.2349"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.027"/>
       <geometry>
         <box size="0.041 0.0402 0.0611"/>
       </geometry>
@@ -72,7 +72,7 @@
     <collision>
       <origin rpy="1.57 -3.14 1.57" xyz="0 0 0"/>
       <geometry>
-        <box size="0.041 0.0602 0.1480"/>
+        <box size="0.041 0.0402 0.0611"/>
       </geometry>
     </collision>
   </link>
@@ -205,7 +205,7 @@
    -->
   <link name="wrist_yaw_motor">
     <inertial>
-      <origin rpy="0 3.14 0" xyz="0 0 0.058"/>
+      <origin rpy="0 3.14 0" xyz="0 0.018 0.058"/>
       <mass value="0.05573"/>
       <inertia ixx="0.00001611154" ixy="0.00000001397" ixz="0.0" iyy="0.00000888743" iyz="0.00000015948" izz="0.00001354172"/>
     </inertial>
@@ -217,7 +217,7 @@
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="-1.57 3.14 0" xyz="0 0 0.058"/>
+      <origin rpy="0 3.14 0" xyz="0 0.018 0.058"/>
       <geometry>
         <box size="0.032 0.04 0.05"/>
       </geometry>
@@ -277,7 +277,7 @@
       <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 3.14 0" xyz="0.008 0.07 -0.009"/>
+      <origin rpy="0 0 0" xyz="-0.019 0.092 0.002"/>
       <geometry>
         <mesh filename="package://mobile_manipulator/meshes/gripper.stl" scale="0.001 0.001 0.001"/>
       </geometry>
