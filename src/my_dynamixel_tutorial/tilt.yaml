@@ -24,7 +24,7 @@ shoulder_pitch_controller:
         min: 713
         max: 3250
     motor_slave:
-        id: 6
+        id: 8
 
 elbow_controller:
     controller:
@@ -51,6 +51,19 @@ wrist_pitch_controller:
         init: 512
         min: 50
         max: 975
+
+wrist_yaw_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: wrist_yaw
+    joint_speed: 1.75
+    motor:
+        id: 5
+        init: 512
+        min: 0
+        max: 1024
         
 wrist_roll_controller:
     controller:
@@ -60,7 +73,7 @@ wrist_roll_controller:
     joint_name: wrist_roll
     joint_speed: 1.75
     motor:
-        id: 5
+        id: 6
         init: 512
         min: 0
         max: 1024

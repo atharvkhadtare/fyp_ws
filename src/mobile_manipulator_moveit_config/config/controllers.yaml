@@ -9,4 +9,5 @@ controller_list:
       - shoulder_pitch
       - elbow
       - wrist_pitch
+      - wrist_yaw
       - wrist_roll

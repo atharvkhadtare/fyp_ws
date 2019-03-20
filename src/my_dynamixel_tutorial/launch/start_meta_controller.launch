@@ -8,6 +8,7 @@
                   shoulder_pitch_controller
                   elbow_controller
                   wrist_pitch_controller
+                  wrist_yaw_controller
                   wrist_roll_controller
                 "
           output="screen"/>
@@ -22,6 +23,7 @@
                   shoulder_pitch_controller
                   elbow_controller
                   wrist_pitch_controller
+                  wrist_yaw_controller
                   wrist_roll_controller
                "
           output="screen"/>
