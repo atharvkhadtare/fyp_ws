@@ -5,6 +5,9 @@ echo sra | sudo -S pkill ros
 export MYROBOT_NAME="mobile_manipulator"
 rosrun xacro xacro --inorder -o "$MYROBOT_NAME".urdf "$MYROBOT_NAME".xacro
 rosrun collada_urdf urdf_to_collada "$MYROBOT_NAME".urdf "$MYROBOT_NAME".dae
+export IKFAST_PRECISION="5"
+cp "$MYROBOT_NAME".dae "$MYROBOT_NAME".backup.dae  # create a backup of your full precision dae.
+rosrun moveit_kinematics round_collada_numbers.py "$MYROBOT_NAME".dae "$MYROBOT_NAME".dae "$IKFAST_PRECISION"
 export PLANNING_GROUP="arm"
 openrave-robot.py "$MYROBOT_NAME".dae --info links
 read -p 'base_link: ' BASE_LINK

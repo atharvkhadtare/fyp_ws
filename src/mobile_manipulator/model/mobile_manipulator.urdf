@@ -11,26 +11,11 @@
   <!-- Macros of the J plate -->
   <!-- Macros of the gripper -->
   <!-- LINKS -->
-  <link name="bot">
-    <inertial>
-      <origin rpy="0 0 0 " xyz="0 0 0"/>
-      <mass value="0.140"/>
-      <inertia ixx="0.000050799110" ixy="0.0" ixz="0.0" iyy="0.00002857215" iyz="0.00000051457" izz="0.000043394"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0 " xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://mobile_manipulator/meshes/bot.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="white"/>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://mobile_manipulator/meshes/bot.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
+  <!-- <link name="bot">
+    <xacro:BotInertial trans="0 0 0" rpy="0 0 0 "/>  
+    <xacro:BotVisual trans="0 0 0" rpy="0 0 0 "/>
+    <xacro:BotCollision trans="0 0 0" rpy="0 0 0"/>
+  </link> -->
   <link name="shoulder_yaw_motor">
     <inertial>
       <origin rpy="0 0 0 " xyz="0 0 0"/>
@@ -298,12 +283,8 @@
       </geometry>
     </collision>
   </link>
-  <joint name="bot_joint" type="fixed">
-    <parent link="bot"/>
-    <child link="shoulder_yaw_motor"/>
-  </joint>
   <joint name="shoulder_yaw" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0.188 0.2577"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="shoulder_yaw_motor"/>
     <child link="shoulder_bracket"/>
     <axis xyz="0 0 1"/>
@@ -371,3 +352,4 @@
 </robot>
 <!-- 0 0.018 0.06 -->
 <!-- 0 0.02 0.082 -->
+<!--0vghvg  0.188 0.2577 -->
