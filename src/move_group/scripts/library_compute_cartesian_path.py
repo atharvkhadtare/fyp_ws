@@ -37,7 +37,7 @@ waypoints.append(copy.deepcopy(wpose))
 # wpose.orientation.w = 0.0
 
 # wpose.position.z -= scale * 10  # and sideways (y)
-wpose.position.x +  = scale * 10
+wpose.position.x += scale * 10
 # wpose.position.y -= scale * 6
 waypoints.append(copy.deepcopy(wpose))
 # wpose.position.y -= scale * 25

@@ -5,8 +5,8 @@ controller_list:
    type: FollowJointTrajectory
    default: true
    joints:
-      - shoulder_yaw
-      - shoulder_pitch
+      - shoulder_yaw_joint_rev
+      - shoulder_pitch_joint_rev
       - elbow
       - wrist_pitch
       - wrist_yaw

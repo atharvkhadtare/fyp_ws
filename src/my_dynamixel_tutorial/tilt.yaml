@@ -3,7 +3,7 @@ shoulder_yaw_controller:
         package: dynamixel_controllers
         module: joint_position_controller
         type: JointPositionController
-    joint_name: shoulder_yaw
+    joint_name: shoulder_yaw_joint_rev
     joint_speed: 1.75
     motor:
         id: 1
@@ -16,7 +16,7 @@ shoulder_pitch_controller:
         package: dynamixel_controllers
         module: joint_position_controller_dual_motor
         type: JointPositionControllerDual
-    joint_name: shoulder_pitch
+    joint_name: shoulder_pitch_joint_rev
     joint_speed: 1.75
     motor_master:
         id: 2

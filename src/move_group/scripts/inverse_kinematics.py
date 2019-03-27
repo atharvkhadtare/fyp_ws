@@ -52,9 +52,11 @@ print "Robot Groups:", robot.get_group_names(), "\n============"
 
 print "Group_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()
+# end_effector_coordinate = [-0.295, -0.126, 0.392]
+# end_effector_orientatation = [-0.066, -0.024, 1.770] 
 
-end_effector_coordinate = [0.0, 0.19, 0.76]
-end_effector_orientatation = [3.14, 0.0, 3.14] 
+end_effector_coordinate = [0.10, 0.32, 0.10]
+end_effector_orientatation = [0, 0, 0] 
 quaternion = tf.transformations.quaternion_from_euler(end_effector_orientatation[0],end_effector_orientatation[1],end_effector_orientatation[2])
 end_effector_coordinate.extend(quaternion)
 

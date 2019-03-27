@@ -10,8 +10,8 @@ mobile_manipulator:
 # Settings for ros_control hardware interface
   hardware_interface:
     joints:
-      - shoulder_yaw
-      - shoulder_pitch
+      - shoulder_yaw_joint_rev
+      - shoulder_pitch_joint_rev
       - elbow
       - wrist_pitch
       - wrist_yaw
@@ -28,8 +28,8 @@ mobile_manipulator:
       default: True
       type: FollowJointTrajectory
       joints:
-        - shoulder_yaw
-        - shoulder_pitch
+        - shoulder_yaw_joint_rev
+        - shoulder_pitch_joint_rev
         - elbow
         - wrist_pitch
         - wrist_roll

@@ -7,12 +7,12 @@ joint_limits:
     max_velocity: 1
     has_acceleration_limits: false
     max_acceleration: 0
-  shoulder_pitch:
+  shoulder_pitch_joint_rev:
     has_velocity_limits: true
     max_velocity: 1
     has_acceleration_limits: false
     max_acceleration: 0
-  shoulder_yaw:
+  shoulder_yaw_joint_rev:
     has_velocity_limits: true
     max_velocity: 1
     has_acceleration_limits: false
