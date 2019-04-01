@@ -55,8 +55,8 @@ print "Joint Angles\n", group_arm.get_current_joint_values()
 # end_effector_coordinate = [-0.295, -0.126, 0.392]
 # end_effector_orientatation = [-0.066, -0.024, 1.770] 
 
-end_effector_coordinate = [0.10, 0.32, 0.10]
-end_effector_orientatation = [0, 0, 0] 
+end_effector_coordinate = [0.38, 0.32, 0.05]
+end_effector_orientatation = [-1.600, -0.0366, -1.95] 
 quaternion = tf.transformations.quaternion_from_euler(end_effector_orientatation[0],end_effector_orientatation[1],end_effector_orientatation[2])
 end_effector_coordinate.extend(quaternion)
 
