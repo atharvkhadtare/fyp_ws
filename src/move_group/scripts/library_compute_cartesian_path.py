@@ -23,88 +23,41 @@ display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path
                                                moveit_msgs.msg.DisplayTrajectory,
                                                queue_size=20)
 planning_frame = group_arm.get_planning_frame()
-# group_arm.set_goal_tolerance(0.0005)
-# print "============ \nReference frame: %s" % planning_frame
-# eef_link = group_arm.get_end_effector_link()
-# print "End effector: %s" % eef_link
-# group_names = robot.get_group_names()
-# print "Goal_tolerance\n", group_arm.get_goal_tolerance()
-# print "Robot Groups:", robot.get_group_names(), "\n============"
 
-
-# print "Group_arm pose\n", group_arm.get_current_pose()
-# print "Joint Angles\n", group_arm.get_current_joint_values()
-
-# def create_linear_path(start, goal, intermediate_points):
-# 	waypoints = []
-# 	# wp =  pose_to_list(group_arm.get_current_pose().pose)
-# 	# start = wp
-# 	arrays = []
-# 	quat_arrays = []
-# 	for i in range(len(start)):
-# 		arrays.extend(range(int(start[i]*100), int(goal[i]*100)+1, (int(goal[i]*100) - int(start[i]*100))/(intermediate_points)))
-# 	arrays = np.reshape(np.array(arrays), (6, intermediate_points+1))
-# 	arrays  = arrays.T
-# 	for point in arrays:
-# 		quat = tf.transformations.quaternion_from_euler(point[3], point[4], point[5])
-# 		quat_point =  np.concatenate((point[:3], quat), axis = 0)
-# 		quat_arrays.append(quat_point)
-# 	print quat_arrays
-# create_linear_path([0, 0, 0, 0, 0, 0], [1, 2, 3, 4, 5, 6], 10)
-
-# group_arm.set_goal_orientation_tolerance(10)
-
+group_arm.set_goal_orientation_tolerance(0.0001)
 
 waypoints = []
 scale = 0.01
 wpose = group_arm.get_current_pose().pose
 waypoints.append(copy.deepcopy(wpose))
 
-# wpose.orientation.x = 0.0
-# wpose.orientation.y = 0.0
-# wpose.or
-# ientation.z = 0.0
-# wpose.orientation.w = 0.0
 
-# wpose.position.z -= scale * 10  # and sideways (y)
-wpose.position.x -= scale * 5
-# wpose.position.y -= scale * 6
-waypoints.append(copy.deepcopy(wpose))
-wpose.position.y -= scale * 25
-waypoints.append(copy.deepcopy(wpose))
-wpose.position.x -= scale * 25
-waypoints.append(copy.deepcopy(wpose))
-# wpose.position.y += scale * 10
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.x -= scale * 5
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.x += scale * 8  # Second move forward/backwards in (x)
-# waypoints.append(copy.deepcopy(wpose))
-# wpose.position.z -= scale * 8  # Third move sideways (y)
-# waypoints.append(copy.deepcopy(wpose))
+if (len(sys.argv) == 5):
+    if (sys.argv[1] == "rel" or sys.argv[1] == "r"):
+        wpose.position.x += scale * int(sys.argv[2])  # and sideways (y)
+        wpose.position.y += scale * int(sys.argv[3])
+        wpose.position.z += scale * int(sys.argv[4])
+        waypoints.append(copy.deepcopy(wpose))
+    elif(sys.argv[1] == "abs" or sys.argv[1] == "a"):
+        wpose.position.x = scale * int(sys.argv[2])  # and sideways (y)
+        wpose.position.y = scale * int(sys.argv[3])
+        wpose.position.z = scale * int(sys.argv[4])
+        waypoints.append(copy.deepcopy(wpose))
+else:
+    print "\033[0;31;40m Enter 3 Arguments x y z \033[0;37;40m"
 
-print waypoints
 display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path',
                                                moveit_msgs.msg.DisplayTrajectory,
                                                queue_size=20)
+
 (plan, fraction) = group_arm.compute_cartesian_path(
                                 waypoints,   # waypoints to follow
-                                0.001,        # eef_step
-                                5) # 10 is optimum         # jump_threshold
+                                0.001,       # eef_step
+                                10)           # jump_threshold (10 is optimum)
 
-print "fraction :", fraction
+if (fraction < 0.95):
+    print "\033[0;31;40m #############################  Fraction  ############################# : ", fraction, "\033[0;37;40m"
+else:
+    print "\033[0;32;40m #############################  Fraction  ############################# : ", fraction, "\033[0;37;40m"
 
-# display_trajectory = moveit_msgs.msg.DisplayTrajectory()
-# display_trajectory.trajectory_start = robot.get_current_state()
-# display_trajectory.trajectory.append(plan)
-# # Publish
-# display_trajectory_publisher.publish(display_trajectory)
-
-
-# print plan
 group_arm.execute(plan, wait=True)
-# print "quat:", quaternion
-# print "array:", end_effector_coordinate
-# change_end_pose(group_arm, end_effector_coordinate)
-# print "\nGroup_arm pose\n", group_arm.get_current_pose()
-# print "Joint Angles\n", group_arm.get_current_joint_values()

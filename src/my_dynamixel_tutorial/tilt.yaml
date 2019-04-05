@@ -24,7 +24,7 @@ shoulder_pitch_controller:
         min: 713
         max: 3250
     motor_slave:
-        id: 6
+        id: 8
 
 elbow_controller:
     controller:
@@ -60,7 +60,7 @@ wrist_roll_controller:
     joint_name: wrist_roll
     joint_speed: 1.75
     motor:
-        id: 5
+        id: 6
         init: 512
         min: 0
         max: 1024

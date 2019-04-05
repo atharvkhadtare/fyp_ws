@@ -41,20 +41,16 @@ def close_gripper():
     print " current_load ", current_load
     exit()
 
+def clean_exit():
+    exit()
+
 if __name__ == '__main__':
-    try:
-        gripper_pub = rospy.Publisher('/gripper_controller/command', Float64, queue_size=10)
-        rospy.Subscriber('/gripper_controller/state', JointState, state_callback)
-        rospy.init_node('gripper_controller', anonymous=True)
-        # open_gripper()
-        # rospy.sleep(3.)
-        close_gripper()
-        rospy.spin()
-
-        exit()
-    
-    except rospy.ROSInterruptException:
-        raise e
-        print "Exeption"
-        exit()
-
+    gripper_pub = rospy.Publisher('/gripper_controller/command', Float64, queue_size=10)
+    rospy.Subscriber('/gripper_controller/state', JointState, state_callback)
+    rospy.init_node('gripper_controller', anonymous=True)
+    # open_gripper()
+    # rospy.sleep(3.)
+    close_gripper()
+    rospy.spin()
+    rospy.on_shutdown(clean_exit)
+        

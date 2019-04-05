@@ -36,7 +36,8 @@ print "Robot Groups:", robot.get_group_names(), "\n============"
 print "Group_arm pose\n", group_arm.get_current_pose()
 print "Joint Angles\n", group_arm.get_current_joint_values()
 
-change_joint_angles(group_arm, [0, -1.57, 1.57, 0, 0])
+# change_joint_angles(group_arm, [0, -1.57, 1.57, 0, 0])
+change_joint_angles(group_arm, [0, 0, 1.57, 1.57, 0])
 # change_joint_angles(group_arm, [-3.0357, 0, 0, 0, 0])
 # change_joint_angles(group_arm, [3.24426, 0, 0, 0, 0])
 # change_joint_angles(group_arm, [0, 0, 0, 0, 0])

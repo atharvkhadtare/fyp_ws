@@ -276,7 +276,7 @@
     <child link="shoulder_yaw_motor"/>
   </joint>
   <joint name="shoulder_yaw" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0.188 0.2577"/>
+    <origin rpy="0 0 3.14" xyz="0 0.188 0.2577"/>
     <parent link="shoulder_yaw_motor"/>
     <child link="shoulder_bracket"/>
     <axis xyz="0 0 1"/>
