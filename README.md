@@ -56,13 +56,13 @@ NOTE: While compiling IKFast delete the devel/, logs/ and build/ folders and sto
 
 ## Contact
 
-Atharva Bhave - atharvabhave21@gmail.com
-Atharv Khadtare - atharva860@gmail.com
-Chinmay Khopade - chinmaykhopde@gmail.com
-Shubham Patil - patilshubham1002@gmail.com
-Suyash Junnarkar -smjunn22@gmail.com
-Rishabh Shah - rshah4356@gmail.com
-Viraj Sonawane - majorviraj@gmail.com
+- Atharva Bhave - atharvabhave21@gmail.com
+- Atharv Khadtare - atharva860@gmail.com
+- Chinmay Khopade - chinmaykhopde@gmail.com
+- Shubham Patil - patilshubham1002@gmail.com
+- Suyash Junnarkar -smjunn22@gmail.com
+- Rishabh Shah - rshah4356@gmail.com
+- Viraj Sonawane - majorviraj@gmail.com
 
 <!-- Acknowledgements -->
 
@@ -73,7 +73,5 @@ Viraj Sonawane - majorviraj@gmail.com
 <!-- LICENSE -->
 
 ## License
-
-Describe your License for your project.
 
 Distributed under the MIT License. See `LICENSE` for more information.
